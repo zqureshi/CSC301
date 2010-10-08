@@ -1,0 +1,8 @@
+NEXT MILESTONE
+- Improve Login Page
+  - Design Layout
+  - Register
+  - Password Recovery
+- Start on Calendar Page
+  - Create a calendar layout
+- Design a database
