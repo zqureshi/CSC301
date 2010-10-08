@@ -6,3 +6,11 @@ NEXT MILESTONE
 - Start on Calendar Page
   - Create a calendar layout
 - Design a database
+- User Manuals for complted
+
+Marking Criteria
+- Correctness
+- Programing style
+- Design style
+- Docstring
+- Testss
