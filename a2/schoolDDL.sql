@@ -3,7 +3,7 @@ create table xth_6487779_school.teacher(
 	surName varchar(15),
 	firstName varchar(15),
 	email varchar(25),
-	password varchar(15)
+	password char(15)
 );
 
 create table xth_6487779_school.booking(
@@ -26,5 +26,5 @@ create table xth_6487779_school.room(
 
 create table xth_6487779_school.time(
 	tID integer primary key,
-	time varchar(15)
+	time datetime
 );
