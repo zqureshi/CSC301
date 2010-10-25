@@ -4,18 +4,32 @@
 <link rel="stylesheet" href="<?= base_url() ?>css/blueprint/screen.css" type="text/css" media="screen, projection">
 <link rel="stylesheet" href="<?= base_url() ?>css/blueprint/print.css" type="text/css" media="print">  
 <!--[if lt IE 8]><link rel="stylesheet" href="<?= base_url() ?>css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<link rel="stylesheet" href="<?= base_url() ?>css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
 </head>
 <body>
+<div class="container">
+  <div class="span-24 prepend-top last">
+    <h1>Lab Booking Tool</h1>
+    <hr/>
+  </div>
 
-<h1>Lab Booking Tool</h1>
-<div style="text-align: center; margin: 10%;">
-<?php
-echo form_open('welcome/login');
-echo form_label('Username:', 'label_username');
-echo form_input('username', '');
-echo form_submit('Login', 'Login');
-echo form_close();
-?>
+  <div class="span-8 prepend-8 append-8 last">
+    <?= form_open('welcome/login') ?>
+    <?= form_label('Username:', 'label_username') ?>
+    <?= form_input('username', '') ?>
+    <br/>
+    <?= form_label('Password:', 'label_password') ?>
+    <?= form_input('password', '') ?>
+    <br/>
+    <hr class="space"/>
+    <div class="prepend-2">
+      <?= form_submit('Login', 'Login') ?>
+    </div>
+    <?= form_close() ?>
+  </div>
+
+  <div class="span-24 last" id="footer">
+  </div>
 </div>
 </body>
 </html>
