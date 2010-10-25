@@ -18,7 +18,7 @@ class Users extends Controller{
 
   function index()
   {
-    echo 'You\'re supposed to see this';
+    $this->load->view('users');
   }
 
 }
