@@ -16,6 +16,11 @@ class Users extends Controller{
     $this->load->view('list_users', $data);
   }
 
+  function add_user_form()
+  {
+    $this->load->view('add_user_form');
+  }
+
   function index()
   {
     $this->load->view('users');

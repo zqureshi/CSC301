@@ -21,7 +21,7 @@
 
         <div class="span-8 info last">
           <h3 style="text-align: center">
-            <?= anchor('users/add_users', 'Add Users') ?>
+            <?= anchor('users/add_user_form', 'Add Users') ?>
           <h3>
         </div>
       </div>

@@ -19,4 +19,13 @@ class Booking_user extends Model {
     return $query->result();
   }
 
+  function add_user()
+  {
+    $this->first_name = xss_clean($this->input->post('first_name'));
+    $this->last_name  = xss_clean($this->input->post('last_name'));
+    $this->email      = xss_clean($this->input->post('email'));
+    $this->password   = dohash($this->input->post('password'));
+
+    $this->db->insert('Users', $this);
+  }
 }
