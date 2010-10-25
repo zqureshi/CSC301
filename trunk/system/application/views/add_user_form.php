@@ -28,11 +28,11 @@
           </tr>
           <tr>
             <td>Password</td>
-            <td><?= form_input('password') ?></td>
+            <td><?= form_password('password') ?></td>
           </tr>
           <tr>
             <td>Password (again)</td>
-            <td><?= form_input('password2') ?></td>
+            <td><?= form_password('password2') ?></td>
           </tr>
         </table>
         <?= form_submit('Add', 'Add') ?>

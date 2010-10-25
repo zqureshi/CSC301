@@ -9,7 +9,6 @@ class Users extends Controller{
 
   function list_users()
   {
-    $this->load->database();
     $this->load->model('Booking_user');
     $data['query'] = $this->Booking_user->get_users();
 
@@ -19,6 +18,12 @@ class Users extends Controller{
   function add_user_form()
   {
     $this->load->view('add_user_form');
+  }
+
+  function add_user()
+  {
+    $this->load->model('Booking_user');
+    $this->Booking_user->add_user();
   }
 
   function index()
