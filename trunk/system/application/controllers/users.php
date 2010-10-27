@@ -24,6 +24,14 @@ class Users extends Controller{
   {
     $this->load->model('Booking_user');
     $this->Booking_user->add_user();
+    $data['success'] = TRUE;
+    $this->load->view('add_user_form', $data);
+  }
+
+  function test_user_added()
+  {
+    $data['success'] = TRUE;
+    $this->load->view('add_user_form', $data);
   }
 
   function index()

@@ -11,6 +11,14 @@
         <hr/>
       </div>
 
+      <?php if(isset($success)): ?>
+      <div class="span-24 last">
+        <div class="success" style="text-align: center">
+          User Successfully Added
+        </div>
+      </div>
+      <?php endif; ?>
+
       <div class="span-16 prepend-4 append-4 last">
         <?= form_open('users/add_user') ?>
         <table>
