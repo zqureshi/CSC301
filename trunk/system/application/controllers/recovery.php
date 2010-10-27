@@ -15,11 +15,19 @@ class Recovery extends Controller {
 
 	}
 
-  function reset_password($hash)
+  function start_password_reset($hash = NULL){
+    if($hash != NULL){
+      $this->load->view('reset_pass_form', array('hash' => $hash));
+    } else {
+      echo 'Error! No Hash Provided';
+    }
+  }
+
+  function reset_password($hash = NULL)
   {
-    if($this->Recovery_hash->has_hash($hash)){
+    if($hash != NULL || $this->Recovery_hash->has_hash($hash)){
       $id = $this->Recovery_hash->get_user($hash);
-      $this->Booking_user->update_pass($id, 'hello');
+      $this->Booking_user->update_pass($id, $this->input->post('password'));
       $this->Recovery_hash->remove_hash($hash);
       echo 'Password Reset';
     } else {

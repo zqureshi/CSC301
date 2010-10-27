@@ -12,7 +12,7 @@
       </div>
 
       <div class="span-16 prepend-4 append-4 last">
-        <?= form_open('recovery/reset_password') ?>
+        <?= form_open("recovery/reset_password/{$hash}") ?>
         <table>
             <td>New Password</td>
             <td><?= form_password('password') ?></td>
