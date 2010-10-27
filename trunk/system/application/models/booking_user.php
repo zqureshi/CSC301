@@ -27,6 +27,13 @@ class Booking_user extends Model {
     return $query->result();
   }
 
+  function update_pass($id, $password)
+  {
+    $this->password = dohash($password);
+    $this->db->where('id', $id);
+    $this->db->update('Users');
+  }
+
   function add_user()
   {
     $this->first_name = xss_clean($this->input->post('first_name'));

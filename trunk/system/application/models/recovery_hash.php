@@ -9,7 +9,7 @@ class Recovery_hash extends Model {
     parent::Model();
   }
 
-  function hash_hash($hash)
+  function has_hash($hash)
   {
     $this->db->where('id', $hash);
     $query = $this->db->get('Recovery');
