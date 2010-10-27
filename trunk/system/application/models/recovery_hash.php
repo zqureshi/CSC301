@@ -9,7 +9,7 @@ class Recovery_hash extends Model {
     parent::Model();
   }
 
-  function get_id($hash)
+  function get_user($hash)
   {
     $this->db->where('id', $hash);
     $query = $this->db->get('Recovery');
@@ -17,7 +17,8 @@ class Recovery_hash extends Model {
     if($query->num_rows() == 0){
       return FALSE;
     } else {
-      return $id;
+      $result = $query->result();
+      return $result[0]->user;
     }
   }
 

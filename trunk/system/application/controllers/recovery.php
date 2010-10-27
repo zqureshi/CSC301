@@ -8,13 +8,27 @@ class Recovery extends Controller {
 
     /* Load Email library class */
     $this->load->library('email');
-	}
 
-  function send_mail()
-  {
+    /* Load required models */
     $this->load->model('Booking_user');
     $this->load->model('Recovery_hash');
 
+	}
+
+  function reset_password($hash)
+  {
+    if($this->Recovery_hash->has_hash($hash)){
+      $id = $this->Recovery_hash->get_user($hash);
+      $this->Booking_user->update_pass($id, 'hello');
+      $this->Recovery_hash->remove_hash($hash);
+      echo 'Password Reset';
+    } else {
+      echo 'Error! Hash  doesn\'t exist';
+    }
+  }
+
+  function send_mail()
+  {
     $result = $this->Booking_user->get_user(
       'email',
       xss_clean($this->input->post('email'))

@@ -31,7 +31,7 @@ class Booking_user extends Model {
   {
     $this->password = dohash($password);
     $this->db->where('id', $id);
-    $this->db->update('Users');
+    $this->db->update('Users', $this);
   }
 
   function add_user()
