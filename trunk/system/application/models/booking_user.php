@@ -12,6 +12,14 @@ class Booking_user extends Model {
     parent::Model();
   }
 
+  function get_user($var,$val)
+  {
+    $this->db->where($var, $val);
+    $query = $this->db->get_where('Users');
+
+    return $query->result();
+  }
+
   function get_users()
   {
     $query = $this->db->get('Users');
