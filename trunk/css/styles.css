@@ -34,17 +34,6 @@ margin:auto;
 width:800px;
 }
 
-container1
-{
-background-image:url('frame_hor.png');
-height: 20px
-width: 100%
-}
-
-container2
-{
-}
-
 html, body, table {
   margin: 0;
   margin-bottom: 3em;
@@ -67,19 +56,6 @@ a:link {
 
 a:visited {
   color: #037;
-}
-
-div.title {
-  padding-right: 1em;
-  text-align: right;
-  /*font-size: 75%; */
-  border: solid 3px #000040;
-  /* border: solid 3px #336699; */
-  /*background-image: url("http://www.cdf.toronto.edu/~csc108h/winter/images/hbg70.jpg");*/
-  margin-bottom: 2.5ex; 
-  background-color: #000040;
-  /*  background-color: #336699; */
-  color: white;
 }
 
 .clear {
