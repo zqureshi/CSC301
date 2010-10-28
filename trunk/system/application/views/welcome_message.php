@@ -6,7 +6,7 @@
 <body>
 <div class="container">
   <div class="span-24 prepend-top last">
-    <h1>Lab Booking Toolllllll</h1>
+    <h1>Lab Booking Tool</h1>
     <hr/>
   </div>
 
