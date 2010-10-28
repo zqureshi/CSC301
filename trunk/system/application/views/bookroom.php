@@ -86,9 +86,9 @@ if($nextMonth >= 13){
 
 echo "  <table border='0' cellpadding='0' cellspacing='0' class='calendar'>
 		<tr>
-		<th><a href='/codeig/index.php/bookroom/index/$prevYear/$prevMonth'>&lt;&lt;</a></th>
+		<th><a href='/bookroom/index/$prevYear/$prevMonth'>&lt;&lt;</a></th>
 		<th colspan='5'>$mn $yn </th>
-		<th><a href='/codeig/index.php/bookroom/index/$nextYear/$nextMonth'>&gt;&gt;</a></th>
+		<th><a href='/bookroom/index/$nextYear/$nextMonth'>&gt;&gt;</a></th>
 		</tr>
 		<tr>
 		<td>Su</td><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td>
