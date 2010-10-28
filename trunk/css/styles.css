@@ -29,7 +29,7 @@ margin:auto;
 }
 .center
 {
-padding-top: 15%;
+padding-top: 10%;
 margin:auto;
 width:800px;
 }
@@ -84,7 +84,7 @@ div.title {
 
 .clear {
   clear: both;
-  font-size: 1px;
+  /*font-size: 1px; */
 }
 
 .footer {
