@@ -44,6 +44,8 @@ class Recovery_hash extends Model {
     $this->user = $user_id;
 
     $this->db->insert('Recovery', $this);
+
+    return $this->id;
   }
 
   function remove_hash($hash){

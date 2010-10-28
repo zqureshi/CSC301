@@ -49,18 +49,16 @@ class Recovery extends Controller {
 
     $user = $result[0];
 
-    $this->Recovery_hash->add_hash($user->id);
+    $hash = $this->Recovery_hash->add_hash($user->id);
     echo "Activation Email Sent";
 
-    /*
-    $this->email->from('noreply@cdf.toronto.edu');
-    $this->email->to('zeeshan.quireshi@gmail.com');
-    $this->email->subject('Testing Recovery Email');
+    $this->email->from('noreply@aafjj9f2.yahoo.joyent.us');
+    $this->email->to($user->email);
+    $this->email->subject('LabBooking Password Recovery');
     $this->email->message('This Should Work');
 
     $this->email->send();
     echo $this->email->print_debugger();
-     */
   }
 	
 	function index()
