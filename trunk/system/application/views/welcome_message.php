@@ -26,7 +26,7 @@
     <?= form_close() ?>
   </div>
   
- <div class="container1"><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
+ <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
 
   <div class="span-24 last" id="footer">  </div>
 </div>
