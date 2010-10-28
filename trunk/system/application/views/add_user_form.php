@@ -31,6 +31,10 @@
             <td><?= form_input('last_name') ?></td>
           </tr>
           <tr>
+            <td>Username</td>
+            <td><?= form_input('username') ?></td>
+          </tr>
+          <tr>
             <td>E-Mail Address</td>
             <td><?= form_input('email') ?></td>
           </tr>

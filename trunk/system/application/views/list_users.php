@@ -16,6 +16,7 @@
         <thead>
           <tr>
             <th>ID</th>
+            <th>Username</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>E-Mail</th>
@@ -25,6 +26,7 @@
           <?php foreach($query as $row): ?>
           <tr>
             <td><?= $row->id ?></td>
+            <td><?= $row->username ?></td>
             <td><?= $row->first_name ?></td>
             <td><?= $row->last_name ?></td>
             <td><?= $row->email ?></td>
