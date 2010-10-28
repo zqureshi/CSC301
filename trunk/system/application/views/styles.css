@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+h1 {
+  font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+  rotation: 45deg;
+  rotation-point: bottom left;
+}
+thead th {
+    block-progression: rl;
+    padding: 0.5em 1em;
+    rotation: 45deg;
+    rotation-point: bottom left }
+    
+h2 {
+  border-bottom: solid 1px #000040;
+  border-top: solid 1px #000040;
+}
+
+h3, h4, h5, h6 {
+}
+
+.center2
+{
+padding-top: 14%;
+margin:auto;
+}
+.center
+{
+padding-top: 15%;
+margin:auto;
+width:800px;
+}
+
+container1
+{
+background-image:url('frame_hor.png');
+height: 20px
+width: 100%
+}
+
+container2
+{
+}
+
+html, body, table {
+  margin: 0;
+  margin-bottom: 3em;
+  font-family: "Lucida Grande", Verdana, Arial,  sans-serif;
+  background: #C0C0C0;
+  color: #000;
+}
+div.content {
+  clear: both;
+  position: absolute;
+  float: left;
+  margin-left: 20%;
+  width: 78%;
+  font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+}
+
+a:link {
+  color: #037;
+}
+
+a:visited {
+  color: #037;
+}
+
+div.title {
+  padding-right: 1em;
+  text-align: right;
+  font-size: 75%;
+  border: solid 3px #000040;
+  /* border: solid 3px #336699; */
+  /*background-image: url("http://www.cdf.toronto.edu/~csc108h/winter/images/hbg70.jpg");*/
+  margin-bottom: 2.5ex; 
+  background-color: #000040;
+  /*  background-color: #336699; */
+  color: white;
+}
+
+.clear {
+  clear: both;
+  font-size: 1px;
+}
+
+.footer {
+  clear: none;
+  margin-left: 20%;
+  margin-top: 1px;
+  text-align: right;
+  border-top: solid 3px white;
+}
+
+.footer .left {
+  margin-top: 1px;
+  float: left;
+  text-align: left;
+  width: 60%;
+}
+
+.footer .right {
+  margin-top: 1px;
+  float: right;
+  text-align: right;
+  width: 40%;
+}
+
+.spacer {
+  clear: both;
+}
+
+p {
+  padding: 0;
+  margin-top: 0px;
+  font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+}
+
+dd {
+  font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+}
+
+dt {
+  font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.navigation .links {

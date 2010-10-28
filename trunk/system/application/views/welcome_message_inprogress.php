@@ -1,17 +1,16 @@
 <html>
 <head>
 <title>Online Lab Booing Tool</title>
+<link rel="stylesheet" href="styles.css" type="text/css" /> 
 <?php $this->load->view('includes') ?>
 </head>
 <body>
-<div class="container">
-  <div class="span-24 prepend-top last">
-    <h1 align="center">&nbsp;</h1>
-    <h1 align="center">&nbsp;</h1>
-    <h1 align="center">&nbsp;</h1>
-    <h1 align="center">&nbsp;</h1>
-    <h1 align="center"><img src="side_Frame.png" alt="" width="50" height="500">  <img src="logo_cropped.png" width="298" height="114"> <img src="side_Frame.png" alt="" width="50" height="500"></h1>
-    </div>
+<h1 align="center">
+
+
+<div class="center">
+<div class="container1"><span class="span-24 prepend-top last"><img src="frame_hor.png" width=100% height="30"></span></div>
+<div class="container"><div class="span-24 prepend-top last"><img src="logo_cropped.png" width="298" height="114"></div>
 
   <div class="span-8 prepend-8 append-8 last">
     <?= form_open('welcome/login') ?>
@@ -26,9 +25,12 @@
     </div>
     <?= form_close() ?>
   </div>
+  
+ <div class="container1"><span class="span-24 prepend-top last"><img src="frame_hor.png" width=100% height="30"></span></div>
 
-  <div class="span-24 last" id="footer">
-  </div>
+  <div class="span-24 last" id="footer">  </div>
 </div>
+</div>
+</h1>
 </body>
 </html>
