@@ -10,7 +10,7 @@
 
 <div class="center">
 <div class="container1"><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
-<div class="container"><div class="span-24 prepend-top last"><img src="logo_cropped.png" width="298" height="114"></div>
+<div class="container"><div class="span-24 prepend-top last"><img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114"></div>
 
   <div class="span-8 prepend-8 append-8 last">
     <?= form_open('welcome/login') ?>
@@ -26,7 +26,7 @@
     <?= form_close() ?>
   </div>
   
- <div class="container1"><span class="span-24 prepend-top last"><img src="frame_hor.png" width=100% height="30"></span></div>
+ <div class="container1"><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
 
   <div class="span-24 last" id="footer">  </div>
 </div>
