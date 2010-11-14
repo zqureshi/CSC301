@@ -45,6 +45,11 @@ margin:auto;
 	padding:10px;
 }
 
+.centeredImage {
+    text-align:center;
+    display:block;
+}
+
 html, body, table {
 	margin: 0;
 	margin-bottom: 3em;
