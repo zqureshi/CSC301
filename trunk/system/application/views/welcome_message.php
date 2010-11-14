@@ -16,30 +16,35 @@ body {
 <div class="centered">
 <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
 <div class="container"><div class="span-8 prepend-6 last">
-  <div align="left"><img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114"></div>
+  <div align="center"><img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114"></div>
 </div>
 
   <div class="span-8 prepend-8 append-8 last">
-    <div align="center">
-      <?= form_open('welcome/login') ?>
-      <?= form_label('Username:', 'label_username') ?>
-      <?= form_input('username', '') ?>
-      <br/>
-      <?= form_label('Password:', 'label_password') ?>
-      <?= form_password('password', '') ?>
-      <br/>
-    </div>
-    <div class="prepend-2">
+    
       <div align="center">
-        <?= form_submit('Login', 'Login') ?>
+        <?= form_open('welcome/login') ?>
+        <?= form_label('Username:', 'label_username') ?>
+        <?= form_input('username', '') ?>
+        <br/>
+        <?= form_label('Password:', 'label_password') ?>
+        <?= form_password('password', '') ?>
+        <br/>
         </div>
-    </div>
-    <div align="center">
-      <?= form_close() ?>
+      <div class="prepend-2">
+      
+        <div align="center">
+          <?= form_submit('Login', 'Login') ?>
+        </div>
+      </div>
+    
+      <div align="center">
+        <?= form_close() ?>
       </div>
   </div>
   
- <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
+ <div>
+   <div align="center"><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
+ </div>
 
   <div class="span-24 last" id="footer">  </div>
 </div>
