@@ -40,14 +40,16 @@ margin:auto;
 	top:50%;
 	width: 800px;
 	height: 150px;
-	margin-left:-600px; /* width/2 */
+	margin-left:-500px; /* width/2 */
 	margin-top:-200px; /* height/2 */
 	padding:10px;
 }
 
 .centeredImage {
     text-align:center;
-    display:block;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px;
 }
 
 html, body, table {
