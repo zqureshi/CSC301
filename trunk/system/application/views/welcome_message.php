@@ -17,7 +17,7 @@ body {
 <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
 <div class="container"><div class="span-8 prepend-6 last">
   <div align="center">
-    <p align="left"><img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114" class="centeredImage"></p>
+    <p align="center"><img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114" align="absmiddle" class="centeredImage"></p>
     </div>
 </div>
 
