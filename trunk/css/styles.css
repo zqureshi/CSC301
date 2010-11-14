@@ -35,11 +35,12 @@ margin:auto;
 }
 
 .centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	width: 600px;
+	margin-left:-300px; /* width/2 */
+	margin-top:-150px; /* height/2 */
 }
 
 html, body, table {
