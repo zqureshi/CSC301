@@ -3,7 +3,14 @@
 <title>Online Lab Booing Tool</title>
 <link rel="stylesheet" href="<?= site_url('css/styles.css') ?>" type="text/css" /> 
 <?php $this->load->view('includes') ?>
-</head>
+<link href="../../../css/styles.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+}
+-->
+</style></head>
 <body>
 <div class="center">
 <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
