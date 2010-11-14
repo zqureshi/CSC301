@@ -40,7 +40,7 @@ margin:auto;
 	top:50%;
 	width: 600px;
 	height: 150px;
-	margin-left:-300px; /* width/2 */
+	margin-left:-450px; /* width/2 */
 	margin-top:-150px; /* height/2 */
 	padding:10px;
 }
