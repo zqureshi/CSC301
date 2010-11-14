@@ -16,8 +16,7 @@ body {
 <div class="centered">
 <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
 <div class="container"><div class="span-8 prepend-6 last">
-    <p class="centeredImage"><img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114"></p>
-    <p class="centeredImage">&nbsp;</p>
+    <p class="centeredImage"><img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114" class="center"></p>
 </div>
 
   <div class="span-8 prepend-8 append-8 last">
