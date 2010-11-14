@@ -31,15 +31,15 @@ margin:auto;
 {
 	padding-top: 10%;
 	margin:auto;
-	width:600px;
+	width:800px;
 }
 
 html, body, table {
-  margin: 0;
-  margin-bottom: 3em;
-  font-family: "Lucida Grande", Verdana, Arial,  sans-serif;
-  background: #C0C0C0;
-  color: #000;
+	margin: 0;
+	margin-bottom: 3em;
+	font-family: "Lucida Grande", Verdana, Arial,  sans-serif;
+	color: #000;
+	background-color: #FFFFFF;
 }
 div.content {
   clear: both;
