@@ -6,6 +6,11 @@ class Book extends Controller {
 	{
 		parent::Controller();	
 	}
+
+	function index()
+	{
+		$this->load->view('book');
+	}
 }
 
 /* End of file welcome.php */
