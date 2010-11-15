@@ -43,11 +43,11 @@ margin:auto;
 	margin-left:-500px; /* width/2 */
 	margin-top:-200px; /* height/2 */
 	padding:10px;
+	text-align:center;
 }
 
-.centeredImage {
-	image-align: center;
-	width: 100%;
+.centeredInside {
+	text-align:center;
 }
 
 html, body, table {
