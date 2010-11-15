@@ -16,16 +16,14 @@ body {
 -->
 </style>
 </head>
-
 <frameset rows="52,*" cols="*" frameborder="no" border="0" framespacing="0">
-  <frameset rows="64*,268*" cols="596">
-    <frame src="top_frame.php" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="top_frame" />
-  
+<frameset rows="64*,268*" cols="596">
+  <frame src="top_frame.php" name="topFrame" scrolling="No" noresize="noresize" id="topFrame" title="top_frame" />
   <frameset rows="*" cols="301,*" framespacing="0" frameborder="no" border="0">
     <frame src="side_frame.php" name="leftFrame" scrolling="No" noresize="noresize" id="leftFrame" title="side_frame" />
     <frame src="bookroom.php" name="mainFrame" id="mainFrame" title="My Calendar" />
   </frameset>
 </frameset>
-<noframes><body>
+<body>
 </body>
-</noframes></html>
+</html>

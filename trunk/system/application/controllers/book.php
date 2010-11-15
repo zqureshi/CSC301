@@ -10,6 +10,9 @@ class Book extends Controller {
 	function index()
 	{
 		$this->load->view('book');
+		$this->load->view('side_frame');
+		$this->load->view('top_frame');
+		$this->load->view('bookroom');
 	}
 }
 
