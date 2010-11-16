@@ -6,6 +6,6 @@
 </head>
 
 <body>
-<img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114" />
+<img src="../../../img/logo_cropped.png" width="298" height="114" />
 </body>
 </html>

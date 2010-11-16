@@ -16,5 +16,7 @@ class Book extends Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./system/application/controllers/welcome.php */
+/* End of file book.php */
+/* Location: ./system/application/controllers/book.php */
+
+?>
