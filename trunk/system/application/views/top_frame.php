@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<div align="right"> <?=anchor('users','Settings');?> | Logged in as | <?=redirect('welcome','Log out');?></div>
+<div align="right"> <?=anchor('users','Settings');?> | Logged in as | <?=anchor('welcome','Log out');?></div>
 </body>
 
 </html>
