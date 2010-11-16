@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>LaBook</title>
 </head>
 
 <body>
-<div align="right"> <?=anchor('users','Settings');?> | Logged in as | <?=anchor('welcome','Log out');?></div>
+<div align="right"> <?=anchor('users','Settings');?> | Logged in as | <?=redirect('welcome','Log out');?></div>
 </body>
 
 </html>

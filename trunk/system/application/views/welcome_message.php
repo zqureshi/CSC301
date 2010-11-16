@@ -2,7 +2,7 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Online Lab Booing Tool</title>
+<title>Online Lab Booking Tool</title>
 <link rel="stylesheet" href="<?= site_url('css/styles.css') ?>" type="text/css" />
 <?php $this->load->view('includes') ?>
 <link href="../../../css/styles.css" rel="stylesheet" type="text/css">
