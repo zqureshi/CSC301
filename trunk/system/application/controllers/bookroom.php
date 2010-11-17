@@ -8,14 +8,18 @@ class Bookroom extends Controller {
 	}
 	
 	function index($year=null, $month=null)
-	{
+	{	
+		$this->load->model('bookroom_model' );		
+		
 		if(($year == null) || ($month == null)){
 			$data['year']= date("Y");
-			$data['month'] = date("m"); ;
+			$data['month'] = date("m"); 
+			$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
 			$this->load->view('bookroom',$data);
 		}else{
 			$data['year']= $year;
 			$data['month'] = $month ;
+			$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
 			$this->load->view('bookroom',$data);
 		}
 	}
