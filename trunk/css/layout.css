@@ -1,0 +1,60 @@
+.calendar {
+	font-family: Arial;
+	font-size: 12px;
+}
+
+table.calendar {
+	margin: auto;
+	border-collapse: collapse;
+}
+
+td.day{
+	width: 80px;
+	height: 80px;
+	padding: 4px;
+	border: 1px solid #999;
+	vertical-align: top;
+	background-color: #99CCFF;
+}
+
+td.day2{
+	width: 80px;
+	height: 80px;
+	padding: 4px;
+	border: 1px solid #999;
+	vertical-align: center;
+	font-weight: bold;
+	text-align:center;
+	background-color: #87CEEB;
+}
+
+td.day_booked{
+	width: 80px;
+	height: 80px;
+	padding: 4px;
+	border: 1px solid #999;
+	vertical-align: top;	
+	background-color: #4C6680;
+}
+
+td.solid{
+	width: 80px;
+	height: 80px;
+	padding: 4px;
+	border: 1px solid #999;
+	vertical-align: top;
+	background-color: #8AB8E6;
+}
+
+.day:hover {
+	background-color: #FFF;
+}
+.day_booked:hover {
+	background-color: #FFF;
+}
+
+.calendar .highlight {
+	font-weight: bold;
+	font-size: 10pt;
+	color: #000000;
+}
