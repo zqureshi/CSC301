@@ -6,7 +6,8 @@
 </head>
 
 <body>
-<div align="right"> <?=anchor('users','Settings');?> | Logged in as | <?=anchor('welcome','Log out');?></div>
+<div align="right"> <?=anchor('users','Settings','target="mainFrame"');?> | Logged in as | <?=anchor('welcome','Log out','target="_top"');?></div>
+<HR>
 </body>
 
 </html>

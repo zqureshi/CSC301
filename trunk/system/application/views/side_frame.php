@@ -6,6 +6,6 @@
 </head>
 
 <body>
-<img src="img/logo_cropped.png" width="298" height="114" />
+<a href="bookroom" target="mainFrame"><img src="<?= site_url('img/logo_cropped.png')?>" width="280" height="105" border="0"></a>
 </body>
 </html>
