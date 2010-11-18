@@ -21,6 +21,14 @@ class Booking_user extends Model {
     return $query->result();
   }
 
+  function get_username()
+  {
+    $this->db->where('id', '2');
+    $query = $this->db->get_where('Users');
+
+    return $query->result();
+  }
+
   function get_users()
   {
     $query = $this->db->get('Users');
