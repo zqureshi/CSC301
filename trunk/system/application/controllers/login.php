@@ -4,7 +4,7 @@ class Login extends Controller {
   
   function Login()
   {
-    parent::Controller;
+    parent::Controller();
 
     /* Load required models */
     $this->load->model('Booking_user');
@@ -12,8 +12,22 @@ class Login extends Controller {
 
   function index()
   {
-    $user = $this->Booking_user->
+    $result = $this->Booking_user->
       get_user('username', $this->input->post('username'));
 
-    echo $user;
+    if(empty($result)){
+      redirect('/welcome');
+    }
+
+    $user = $result[0];
+
+    if(dohash($this->input->post('password')) != $user->password){
+      redirect('/welcome');
+    }
+
+    $this->session->set_userdata('id', $user->id);
+    redirect('/book');
   }
+
+}
+
