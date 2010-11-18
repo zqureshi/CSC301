@@ -47,7 +47,7 @@ class Thirdpage_model extends Model {
 			$currentUser = 1 ; /// This is just a dummy variable for now.................................
 			
 			// Show the forms to book the slot.
-			$this->data .= "<form name=\"input\" action=\"/codeig/index.php/thirdPage/validate\" method=\"POST\">" ."\n";
+			$this->data .= "<form name=\"input\" action=\"/thirdPage/validate\" method=\"POST\">" ."\n";
 			$this->data .= "Person Booking: TEACHER NAME HERE<br>"."\n";
 			$this->data .= "Course: <input type=\"text\" name=\"course\" /><br>"."\n";
 			$this->data .= "Notes: <input type=\"text\" name=\"notes\" /><br>"."\n";

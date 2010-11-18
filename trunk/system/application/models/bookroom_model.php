@@ -69,9 +69,9 @@ class Bookroom_model extends Model {
 				
 		$this->conf['calendar'] .= "  <table border='0' cellpadding='0' cellspacing='0' class='calendar'>
 				<tr>
-				<th style=\"text-decoration: underline;font-size: 11pt\"><a href='/codeig/index.php/bookroom/index/$prevYear/$prevMonth'>&lt;&lt;</a></th>
+				<th style=\"text-decoration: underline;font-size: 11pt\"><a href='/bookroom/index/$prevYear/$prevMonth'>&lt;&lt;</a></th>
 				<th colspan='5' style=\"font-size: 11pt\">$mn $yn </th>
-				<th style=\"text-decoration: underline;font-size: 11pt\"><a href='/codeig/index.php/bookroom/index/$nextYear/$nextMonth'>&gt;&gt;</a></th>
+				<th style=\"text-decoration: underline;font-size: 11pt\"><a href='/bookroom/index/$nextYear/$nextMonth'>&gt;&gt;</a></th>
 				</tr>
 				<tr>
 					<td colspan='7'>&nbsp; </td>

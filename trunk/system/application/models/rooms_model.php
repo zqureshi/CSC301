@@ -61,10 +61,10 @@ class Rooms_model extends Model {
 	 * teacher. 
 	 */
 	function get_username_by_id($id){
-		$sql = "SELECT firstName, surName FROM teacher WHERE ID=$id" ; 
+		$sql = "SELECT first_name, last_name FROM Users WHERE ID=$id" ; 
 		$query = $this->db->query($sql);	
 		foreach ($query->result() as $row){
-			return "$row->firstName $row->surName" ;			
+			return "$row->first_name $row->last_name" ;			
 		}		
 	}
 	
@@ -94,11 +94,11 @@ class Rooms_model extends Model {
 		/// This is just a dummy variable for now...............................................
 		$confirmation = 220000;
 		$date = $year. "-" . $month . "-" .$day ."\n";
-		$sql = "INSERT INTO booking (id,tID,rID,Date,course,confirmation,note) VALUES ("
-			.$this->db->escape($user).", "
+		$sql = "INSERT INTO booking (Date,tID,rID,id,course,confirmation,note) VALUES ("
+			.$this->db->escape($date).", "
 			.$this->db->escape($slot).", "
 			.$this->db->escape($room).", "
-			.$this->db->escape($date).", "
+			.$this->db->escape($user).", "
 			.$this->db->escape($course).", "
 			.$this->db->escape($confirmation).", "
 			.$this->db->escape($notes)
@@ -117,7 +117,7 @@ class Rooms_model extends Model {
 		$this->data .= "		<td align=center>$year-$month-$day</td>"."\n";
 		$this->data .= "	</tr>"."\n";
 		$this->data .= "	<tr>"."\n";
-		$this->data .= "		<td><a href='/codeig/index.php/bookroom/index/$year/$month/$day'>Back to Calendar</a></td>"."\n";
+		$this->data .= "		<td><a href='/bookroom/index/$year/$month/$day'>Back to Calendar</a></td>"."\n";
 		$this->data .= "	</tr>"."\n";
 		$this->data .= "</table>"."\n";
 		
