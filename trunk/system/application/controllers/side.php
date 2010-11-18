@@ -9,6 +9,11 @@ class Side extends Controller {
 
 	function index()
 	{
+		/* Check if session is valid first */
+		if($this->session->userdata('id') == FALSE)
+		{
+			redirect('/welcome');
+		}
 		$this->load->view('side_frame');
 	}
 }

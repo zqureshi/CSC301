@@ -9,6 +9,11 @@ class Bookroom extends Controller {
 	
 	function index($year=null, $month=null)
 	{	
+		/* Check if session is valid first */
+		if($this->session->userdata('id') == FALSE)
+		{
+			redirect('/welcome');
+		}
 		$this->load->model('bookroom_model' );		
 		
 		if(($year == null) || ($month == null)){

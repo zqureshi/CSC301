@@ -11,6 +11,11 @@ class ThirdPage extends Controller {
 	
 	function index($year=null, $month=null,$day=null, $room=null, $slot=null){
 		
+		/* Check if session is valid first */
+		if($this->session->userdata('id') == FALSE)
+		{
+			redirect('/welcome');
+		}
 		
 		if(($year == null) || ($month == null)|| ($day == null)|| ($room == null)|| ($slot == null)){
 			$data['year']= date("Y");
