@@ -9,6 +9,12 @@ class Book extends Controller {
 
 	function index()
 	{
+    /* Check if session is valid first */
+    if($this->session->userdata('id') == FALSE)
+    {
+      redirect('/welcome');
+    }
+
 		$this->load->view('book');
 		$this->load->view('side_frame');
 		$this->load->view('top_frame');
