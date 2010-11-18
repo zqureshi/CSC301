@@ -29,5 +29,11 @@ class Login extends Controller {
     redirect('/book');
   }
 
+  function logout()
+  {
+    $this->session->sess_destroy();
+    redirect('/welcome');
+  }
+
 }
 

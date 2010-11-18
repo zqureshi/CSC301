@@ -15,7 +15,7 @@ class Welcome extends Controller {
 
 	function logout()
 	{
-		redirect('welcome');
+		redirect('/welcome');
 	}
 }
 
