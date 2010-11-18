@@ -14,7 +14,11 @@ class Top extends Controller {
 		{
 			redirect('/welcome','target="_top"');
 		}
-		$this->load->view('top_frame');
+
+                $this->load->model('booking_user');
+                $uid = $this->session->userdata('id');
+                $data['id'] = $this->booking_user->get_user('id', $uid);
+		$this->load->view('top_frame', $data);
 	}
 }
 
