@@ -22,7 +22,7 @@ body {
   <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
   <div class="span-8 prepend-8 append-8 last"> <img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114">
 
-      <?= form_open('book') ?>
+      <?= form_open('login') ?>
       <?= form_label('Username:', 'label_username') ?> 
 	  <?= form_input('username', '') ?>
       <br/>

@@ -18,5 +18,3 @@ class Book extends Controller {
 
 /* End of file book.php */
 /* Location: ./system/application/controllers/book.php */
-
-?>
