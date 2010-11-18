@@ -12,7 +12,7 @@ class Book extends Controller {
 		/* Check if session is valid first */
 		if($this->session->userdata('id') == FALSE)
 		{
-			redirect('/welcome');
+			redirect('/welcome', 'target="_top"');
 		}
 
 		$this->load->view('book');
