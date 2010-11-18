@@ -9,6 +9,7 @@ class Welcome extends Controller {
 	
 	function index()
 	{
+    $this->session->sess_destroy();
 		$this->load->view('welcome_message');
 	}
 
