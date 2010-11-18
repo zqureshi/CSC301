@@ -25,7 +25,7 @@ class Booking_user extends Model {
   {
     $sql = "SELECT username FROM Users WHERE id=$val" ; 
     $query = $this->db->query($sql);
-    return $query->row();
+    return $query->row()->username;
   }
 
   function get_users()
