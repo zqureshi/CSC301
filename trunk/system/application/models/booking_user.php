@@ -23,9 +23,8 @@ class Booking_user extends Model {
 
   function get_username($val)
   {
-    $this->db->where('id', $val);
-    $this->db->select('username');
-    $query = $this->db->get_where('Users');
+    $sql = "SELECT username FROM Users WHERE id=$val" ; 
+    $query = $this->db->query($sql);
     return $query->result();
   }
 
