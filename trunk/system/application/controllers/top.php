@@ -9,11 +9,13 @@ class Top extends Controller {
 
 	function index()
 	{
+		
 		/* Check if session is valid first */
 		if($this->session->userdata('id') == FALSE)
 		{
 			redirect('/welcome','target="_top"');
 		}
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
 
                 $this->load->model('booking_user');
                 $uid = $this->session->userdata('id');

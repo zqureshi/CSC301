@@ -14,6 +14,7 @@ class Rooms extends Controller {
 		{
 			redirect('/welcome');
 		}
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
 		$this->load->model('rooms_model' );
 		
 			// FIX HERE.

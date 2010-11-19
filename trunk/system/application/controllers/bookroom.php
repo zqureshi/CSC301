@@ -14,6 +14,7 @@ class Bookroom extends Controller {
 		{
 			redirect('/welcome','target="_top"');
 		}
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
 		$this->load->model('bookroom_model' );		
 		
 		if(($year == null) || ($month == null)){
