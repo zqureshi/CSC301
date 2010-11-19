@@ -1,11 +1,12 @@
 <?php
 class Rooms_model extends Model {
-	$this->db->cache_off();
+	
 	var $data = '';
 	
 	function Rooms_model () {	
 		parent::Model();
-		$this->load->database();			
+		$this->load->database();
+		$this->db->cache_off();			
 	}
 	
 	function number_of_rooms(){
