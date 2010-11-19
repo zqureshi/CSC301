@@ -1,0 +1,46 @@
+Test:
+User tries to login with invalid username
+Procedure:
+1. User goes to main login page
+2. user enters an ivalid username and some password
+Behaviour:
+User is redirected back to login page
+
+Test:
+User tries to login with invalid password
+Procedure:
+1. User goes to main login page
+2. users enters a valid username and wrong password
+Behaviour:
+User is redirected back to login page
+
+Test:
+User logs ins with proper credentials
+Procedure:
+1. User goes to main login page
+2. user enters valid credentials
+Behaviour:
+A session is created for the user and is presented with the booking calendar
+
+Test:
+User tries to access secured pages without logging in
+Procedure:
+1. User tries to access any page other than the login page
+Behaviour:
+User is redirected back to the login page
+
+Test:
+User logs out
+Procedure:
+1. User clicks on the logout button
+Behaviour:
+User's session is destroyed and is redirected back to the login page
+
+Test:
+User tries to recover password
+Procedure:
+1. User clicks on the recovery option and enters his username
+2. User receives email on the associated id and clicks link in email
+3. User enters new password
+Behaviour:
+The user's password is now changed to the new one
