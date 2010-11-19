@@ -5,7 +5,7 @@ class Rooms_model extends Model {
 	
 	function Rooms_model () {	
 		parent::Model();
-		$this->load->database();
+		$this->load->database();			
 	}
 	
 	function number_of_rooms(){
