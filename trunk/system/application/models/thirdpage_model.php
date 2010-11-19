@@ -44,6 +44,7 @@ class Thirdpage_model extends Model {
 			
 		}else{
 			// figure out who the current user is here:
+                	$this->load->model('booking_user');
 			$currentUser = $this->session->userdata('id');
 			$user = $this->booking_user->get_username($uid);
 			
