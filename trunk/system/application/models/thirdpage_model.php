@@ -9,7 +9,7 @@ class Thirdpage_model extends Model {
 		parent::Model();
 		$this->load->database();
 		$this->load->model('rooms_model');
-		
+                $this->load->model('booking_user');
 	}
 
 
@@ -44,7 +44,6 @@ class Thirdpage_model extends Model {
 			
 		}else{
 			// figure out who the current user is here:
-                	$this->load->model('booking_user');
 			$currentUser = $this->session->userdata('id');
 			$user = $this->booking_user->get_username($currentUser);
 			
