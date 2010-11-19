@@ -13,7 +13,7 @@ class Top extends Controller {
 		/* Check if session is valid first */
 		if($this->session->userdata('id') == FALSE)
 		{
-			redirect('/welcome','target="_top"');
+			redirect('/welcome');
 		}
 		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
 
