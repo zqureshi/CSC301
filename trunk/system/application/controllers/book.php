@@ -14,6 +14,7 @@ class Book extends Controller {
 		{
 			redirect('/welcome', 'target="_top"');
 		}
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
 
 		$this->load->view('book');
 		$this->load->view('side_frame');
