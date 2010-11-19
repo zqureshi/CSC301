@@ -6,7 +6,6 @@ class Rooms_model extends Model {
 	function Rooms_model () {	
 		parent::Model();
 		$this->load->database();
-		$this->db->cache_off();			
 	}
 	
 	function number_of_rooms(){
