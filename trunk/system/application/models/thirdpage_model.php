@@ -45,7 +45,7 @@ class Thirdpage_model extends Model {
 		}else{
 			// figure out who the current user is here:
 			$currentUser = $this->session->userdata('id');
-
+			
 			
 			// Show the forms to book the slot.
 			$this->data .= "<form name=\"input\" action=\"/thirdPage/validate\" method=\"POST\">" ."\n";
