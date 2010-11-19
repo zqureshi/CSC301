@@ -1,6 +1,6 @@
 <?php
 class Thirdpage_model extends Model {
-	
+	$this->db->cache_off();
 	var $data = '';
 	// Maximim booking capacity per day
 	var $maxBooking = 1;

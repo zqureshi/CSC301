@@ -1,6 +1,6 @@
 <?php
 class Rooms_model extends Model {
-	
+	$this->db->cache_off();
 	var $data = '';
 	
 	function Rooms_model () {	
