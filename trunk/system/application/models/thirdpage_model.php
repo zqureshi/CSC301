@@ -46,7 +46,7 @@ class Thirdpage_model extends Model {
 			// figure out who the current user is here:
                 	$this->load->model('booking_user');
 			$currentUser = $this->session->userdata('id');
-			$user = $this->booking_user->get_username($uid);
+			$user = $this->booking_user->get_username($currentUser);
 			
 			// Show the forms to book the slot.
 			$this->data .= "<form name=\"input\" action=\"/thirdPage/validate\" method=\"POST\">" ."\n";
