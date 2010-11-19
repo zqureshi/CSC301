@@ -5,6 +5,7 @@ class ThirdPage extends Controller {
 	function ThirdPage()
 	{
 		parent::Controller();	
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
 		$this->load->model('thirdpage_model' );
 		$this->load->model('rooms_model' );
 	}

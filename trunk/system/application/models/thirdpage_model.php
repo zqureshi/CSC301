@@ -45,11 +45,11 @@ class Thirdpage_model extends Model {
 		}else{
 			// figure out who the current user is here:
 			$currentUser = $this->session->userdata('id');
-			
+			$user = $this->booking_user->get_username($uid);
 			
 			// Show the forms to book the slot.
 			$this->data .= "<form name=\"input\" action=\"/thirdPage/validate\" method=\"POST\">" ."\n";
-			$this->data .= "Person Booking: TEACHER NAME HERE<br>"."\n";
+			$this->data .= "Person Booking: $user<br>"."\n";
 			$this->data .= "Course: <input type=\"text\" name=\"course\" /><br>"."\n";
 			$this->data .= "Notes: <input type=\"text\" name=\"notes\" /><br>"."\n";
 			$this->data .= "<input type=\"hidden\" name=\"year\" value=\"$year\" />"."\n";
