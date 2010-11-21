@@ -22,16 +22,10 @@ h2 {
 h3, h4, h5, h6 {
 }
 
-.center2
-{
-padding-top: 14%;
-margin:auto;
-}
 .center
 {
-	padding-top: 10%;
+	text-align:center;
 	margin:auto;
-	width:800px;
 }
 
 .centered {

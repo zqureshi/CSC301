@@ -15,7 +15,10 @@ class Side extends Controller {
 			redirect('/welcome');
 		}
 		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-		$this->load->view('side_frame');
+		$this->load->model('side_model');
+
+		$data['query'] = $this->side_model->current_booking();
+		$this->load->view('side_frame', $data);
 	}
 }
 
@@ -23,3 +26,4 @@ class Side extends Controller {
 /* Location: ./system/application/controllers/side.php */
 
 ?>
+
