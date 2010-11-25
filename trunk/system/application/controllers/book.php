@@ -29,7 +29,7 @@ class Book extends Controller {
 		$this->load->model('booking_user');
     $uid = $this->session->userdata('id');
     $data['id'] = $this->booking_user->get_username($uid);
-    $data['is_admin'] = $this->booking_user->id_admin($uid);
+    $data['is_admin'] = $this->booking_user->is_admin($uid);
 		$this->load->view('top_frame', $data);
 	}
 

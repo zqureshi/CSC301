@@ -8,13 +8,12 @@
 <body>
 <div align="right"> 
 <?php 
-if($is_admin)
+if($is_admin == TRUE)
 {
-  anchor('users','Settings','target="mainFrame"');
-  echo "|";
+  echo anchor('users','Settings','target="mainFrame"'), " | ";
 }
 ?> 
-Logged in as <?=$id?>
+Logged in as <?=$id?> | 
 <?=anchor('login/logout','Log out','target="_top"');?></div>
 <HR>
 </body>
