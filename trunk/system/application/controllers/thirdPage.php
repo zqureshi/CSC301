@@ -11,7 +11,10 @@ class ThirdPage extends Controller {
 		{
 			redirect(index_page());
 		}
-		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+		$this->output->set_header("Expires: Mon, 20 Dec 1998 01:00:00 GMT");	
+		$this->output->set_header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");	
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");	
+		$this->output->set_header("Pragma: no-cache");	
 
 		$this->load->model('thirdpage_model' );
 		$this->load->model('rooms_model' );
