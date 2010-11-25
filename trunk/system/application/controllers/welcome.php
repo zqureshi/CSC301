@@ -17,7 +17,7 @@ class Welcome extends Controller {
 	function logout()
 	{
 		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-		redirect('/welcome');
+		redirect(index_page());
 	}
 }
 

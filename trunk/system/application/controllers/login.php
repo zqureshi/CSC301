@@ -16,13 +16,13 @@ class Login extends Controller {
       get_user('username', $this->input->post('username'));
 
     if(empty($result)){
-      redirect('/welcome');
+      redirect(index_page());
     }
 
     $user = $result[0];
 
     if(dohash($this->input->post('password')) != $user->password){
-      redirect('/welcome');
+      redirect(index_page());
     }
 
     $this->session->set_userdata('id', $user->id);
@@ -32,7 +32,7 @@ class Login extends Controller {
   function logout()
   {
     $this->session->sess_destroy();
-    redirect('/welcome');
+    redirect(index_page());
   }
 
 }
