@@ -5,19 +5,20 @@ class ThirdPage extends Controller {
 	function ThirdPage()
 	{
 		parent::Controller();	
-		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-		$this->load->model('thirdpage_model' );
-		$this->load->model('rooms_model' );
-	}
-	
-	function index($year=null, $month=null,$day=null, $room=null, $slot=null){
-		
+
 		/* Check if session is valid first */
 		if($this->session->userdata('id') == FALSE)
 		{
 			redirect('/welcome');
 		}
-		
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+
+		$this->load->model('thirdpage_model' );
+		$this->load->model('rooms_model' );
+	}
+	
+  function index($year=null, $month=null,$day=null, $room=null, $slot=null)
+  {
 		if(($year == null) || ($month == null)|| ($day == null)|| ($room == null)|| ($slot == null)){
 			$data['year']= date("Y");
 			$data['month'] = date("m");
