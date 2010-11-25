@@ -34,9 +34,17 @@ class Users extends Controller{
     $this->load->view('list_users', $data);
   }
 
-  function add_user_form()
+  function add_user_form($success=FALSE)
   {
-    $this->load->view('add_user_form');
+    if($success != FALSE)
+    {
+      $data['success'] = TRUE;
+      $this->load->view('add_user_form', $data);
+    }
+    else
+    {
+      $this->load->view('add_user_form');
+    }
   }
 
   function add_user()
@@ -84,8 +92,8 @@ class Users extends Controller{
 
     $this->form_validation->set_rules($rules);
     $this->form_validation->set_error_delimiters(
-      '<div class="error" style="text-align: center">',
-      '</div>'
+      '<tr class="error"><td>',
+      '</td></tr><tr></tr>'
     );
 
     if($this->form_validation->run() == FALSE)
@@ -95,8 +103,7 @@ class Users extends Controller{
     else
     {
       $this->Booking_user->add_user();
-      $data['success'] = TRUE;
-      $this->load->view('add_user_form', $data);
+      redirect('/users/add_user_form/success');
     }
   }
 
