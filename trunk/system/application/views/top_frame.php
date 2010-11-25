@@ -6,7 +6,16 @@
 </head>
 
 <body>
-<div align="right"> <?=anchor('users','Settings','target="mainFrame"');?> | Logged in as <?=$id?> | <?=anchor('login/logout','Log out','target="_top"');?></div>
+<div align="right"> 
+<?php 
+if($is_admin)
+{
+  anchor('users','Settings','target="mainFrame"');
+  echo "|";
+}
+?> 
+Logged in as <?=$id?>
+<?=anchor('login/logout','Log out','target="_top"');?></div>
 <HR>
 </body>
 
