@@ -92,7 +92,7 @@ class Users extends Controller{
 
     $this->form_validation->set_rules($rules);
     $this->form_validation->set_error_delimiters(
-      '<tr class="error"><td>',
+      '<tr class="error"><td colspan="2">',
       '</td></tr><tr></tr>'
     );
 
