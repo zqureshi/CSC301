@@ -62,6 +62,16 @@ class Booking_user extends Model {
     $this->db->insert('Users', $this);
   }
 
+  function update_user()
+  {
+    $this->db->where('id', $this->session->userdata('id'));
+
+    $data['email']    = xss_clean($this->input->post('email'));
+    $data['password']    = dohash($this->input->post('password'));
+
+    $this->db->update('Users', $data);
+  }
+
   function del_user($id)
   {
     $this->db->where('id', $id);

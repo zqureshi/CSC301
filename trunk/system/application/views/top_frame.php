@@ -13,6 +13,7 @@ if($is_admin == TRUE)
   echo anchor('users','Settings','target="mainFrame"'), " | ";
 }
 ?> 
+<?= anchor('/profile', 'Profile', 'target="mainFrame"') ?> | 
 Logged in as <?=$id?> | 
 <?=anchor('login/logout','Log out','target="_top"');?></div>
 <HR>
