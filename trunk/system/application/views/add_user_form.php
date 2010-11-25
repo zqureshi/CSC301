@@ -46,6 +46,13 @@
             <td>Password (again)</td>
             <td><?= form_password('password2') ?></td>
           </tr>
+          <tr>
+            <td>Role</td>
+            <td>
+              <?= form_dropdown('role', 
+                      array(0 => 'User', 1 => 'Admin'), array(0)) ?>
+            </td>
+          </tr>
         </table>
         <?= form_submit('Add', 'Add') ?>
         <?= form_close() ?>

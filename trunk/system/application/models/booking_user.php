@@ -49,6 +49,7 @@ class Booking_user extends Model {
     $this->email      = xss_clean($this->input->post('email'));
     $this->username   = xss_clean($this->input->post('username'));
     $this->password   = dohash($this->input->post('password'));
+    $this->admin      = xss_clean($this->input->post('role'));
 
     $this->db->insert('Users', $this);
   }
