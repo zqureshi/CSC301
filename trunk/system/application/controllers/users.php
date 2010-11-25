@@ -20,6 +20,7 @@ class Users extends Controller{
   function list_users()
   {
     $data['query'] = $this->Booking_user->get_users();
+    $this->load->helper('html');
 
     $this->load->view('list_users', $data);
   }
