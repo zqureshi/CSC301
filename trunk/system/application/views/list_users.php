@@ -31,7 +31,7 @@
             <td><?= $row->first_name ?></td>
             <td><?= $row->last_name ?></td>
             <td><?= $row->email ?></td>
-            <td><?= anchor('/users/del_user/'.$row->id, '[delete]') ?></td>
+            <td><?= anchor('/users/del_user/'.$row->id, img('/img/delete-icon.png')) ?></td>
           </tr>
           <?php endforeach; ?>
         </tbody>
