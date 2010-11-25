@@ -7,6 +7,7 @@ class Booking_user extends Model {
   var $email      = '';
   var $username   = '';
   var $password   = '';
+  var $admin = 0;
 
   function Booking_user()
   {
