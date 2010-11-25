@@ -24,19 +24,35 @@
         <table>
           <tr>
             <td>Username</td>
-            <td><?= $user->username ?></td>
+            <td>
+              <?= form_input( array(
+                    'value' => $user->username,
+                    'disabled' => '',)) ?>
+            </td>
           </tr>
           <tr>
             <td>First Name</td>
-            <td><?= $user->first_name ?></td>
+            <td>
+              <?= form_input( array(
+                    'value' => $user->first_name,
+                    'disabled' => '')) ?>
+            </td>
           </tr>
           <tr>
             <td>Last Name</td>
-            <td><?= $user->last_name ?></td>
+            <td>
+              <?= form_input( array(
+                    'value' => $user->last_name,
+                    'disabled' => '')) ?>
+            </td>
           </tr>
           <tr>
             <td>Role</td>
-            <td><?= $role ?></td>
+            <td>
+              <?= form_input( array(
+                    'value' => $role,
+                    'disabled' => '')) ?>
+            </td>
           </tr>
           <?= form_error('email') ?>
           <tr>
