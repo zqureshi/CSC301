@@ -15,6 +15,12 @@ class Users extends Controller{
 
     /* load required models */
     $this->load->model('Booking_user');
+
+    /* Check if user accessing is an administrator */
+    if($this->Booking_user->is_admin($this->session->userdata('id')) == FALSE)
+    {
+			redirect('/bookroom');
+    }
   }
 
   function list_users()

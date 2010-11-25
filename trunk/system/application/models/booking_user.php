@@ -14,6 +14,12 @@ class Booking_user extends Model {
     parent::Model();
   }
 
+  function is_admin($id)
+  {
+    $user = $this->get_user('id', $id);
+    return $user->admin == 1;
+  }
+
   function get_user($var,$val)
   {
     $this->db->where($var, $val);
