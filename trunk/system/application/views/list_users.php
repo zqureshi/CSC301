@@ -16,7 +16,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Admin</th>
+            <th>Role</th>
             <th>Username</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -28,7 +28,7 @@
           <?php foreach($query as $row): ?>
           <tr>
             <td><?= $row->id ?></td>
-            <td><?= ($row->admin == 1) ? 'Yes' : 'No' ?>
+            <td><?= ($row->admin == 1) ? 'Admin' : 'User' ?>
             <td><?= $row->username ?></td>
             <td><?= $row->first_name ?></td>
             <td><?= $row->last_name ?></td>
