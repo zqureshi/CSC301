@@ -16,7 +16,9 @@ class Booking_user extends Model {
 
   function is_admin($id)
   {
-    $user = $this->get_user('id', $id);
+    $result = $this->get_user('id', $id);
+    $user = $result[0];
+
     return $user->admin == 1;
   }
 
