@@ -28,7 +28,7 @@
           <?php foreach($query as $row): ?>
           <tr>
             <td><?= $row->id ?></td>
-            <td><?= ($row->admin == 1) ? 'YES' : 'NO' ?>
+            <td><?= ($row->admin == 1) ? 'Yes' : 'No' ?>
             <td><?= $row->username ?></td>
             <td><?= $row->first_name ?></td>
             <td><?= $row->last_name ?></td>
