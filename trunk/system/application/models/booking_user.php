@@ -51,4 +51,11 @@ class Booking_user extends Model {
 
     $this->db->insert('Users', $this);
   }
+
+  function del_user($id)
+  {
+    $this->db->where('id', $id);
+    $this->db->delete('Users');
+  }
 }
+

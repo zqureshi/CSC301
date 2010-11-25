@@ -20,6 +20,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>E-Mail</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +31,7 @@
             <td><?= $row->first_name ?></td>
             <td><?= $row->last_name ?></td>
             <td><?= $row->email ?></td>
+            <td><?= anchor('/users/del_user/'.$row->id, '[delete]') ?></td>
           </tr>
           <?php endforeach; ?>
         </tbody>

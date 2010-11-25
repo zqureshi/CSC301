@@ -12,11 +12,13 @@ class Users extends Controller{
 			redirect('/welcome');
 		}
 		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+
+    /* load required models */
+    $this->load->model('Booking_user');
   }
 
   function list_users()
   {
-    $this->load->model('Booking_user');
     $data['query'] = $this->Booking_user->get_users();
 
     $this->load->view('list_users', $data);
@@ -29,7 +31,6 @@ class Users extends Controller{
 
   function add_user()
   {
-    $this->load->model('Booking_user');
     $this->Booking_user->add_user();
     $data['success'] = TRUE;
     $this->load->view('add_user_form', $data);
@@ -39,6 +40,13 @@ class Users extends Controller{
   {
     $data['success'] = TRUE;
     $this->load->view('add_user_form', $data);
+  }
+
+  function del_user($id)
+  {
+    $this->Booking_user->del_user($id);
+
+    redirect('/users/list_users');
   }
 
   function index()
