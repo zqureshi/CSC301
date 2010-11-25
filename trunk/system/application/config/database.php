@@ -38,9 +38,9 @@ $active_group = "default";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
-$db['default']['username'] = "labbooking";
-$db['default']['password'] = "labbooking";
-$db['default']['database'] = "labbooking";
+$db['default']['username'] = "aafjj9f2";
+$db['default']['password'] = "ekjotzwtyjxw";
+$db['default']['database'] = "aafjj9f2_booking_tool";
 $db['default']['dbdriver'] = "mysqli";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
