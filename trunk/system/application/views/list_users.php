@@ -2,6 +2,17 @@
   <head>
     <title>Listing Users</title>
     <?php $this->load->view('includes') ?>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('a.deluser').click(function(event){
+          if(confirm('Delete selected user?')){
+            user = $(this).attr('user');
+            $.get('<?= site_url('/users/del_user') ?>/' + user);
+            $(this).parents('tr').addClass('error').hide(1000);
+          }
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -26,14 +37,18 @@
         </thead>
         <tbody>
           <?php foreach($query as $row): ?>
-          <tr>
+          <tr id="row:<?= $row->id ?>">
             <td><?= $row->id ?></td>
-            <td><?= ($row->admin == 1) ? 'Admin' : 'User' ?>
+            <td><?= ($row->admin == 1) ? 'Admin' : 'User' ?></td>
             <td><?= $row->username ?></td>
             <td><?= $row->first_name ?></td>
             <td><?= $row->last_name ?></td>
             <td><?= $row->email ?></td>
-            <td><?= anchor('/users/del_user/'.$row->id, img('/img/delete-icon.png')) ?></td>
+            <td>
+              <a class="deluser" user="<?= $row->id ?>">
+                <?= img('/img/delete-icon.png') ?>
+              </a>
+            </td>
           </tr>
           <?php endforeach; ?>
         </tbody>
