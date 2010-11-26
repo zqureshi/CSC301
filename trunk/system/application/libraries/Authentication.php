@@ -6,10 +6,20 @@ class Authentication
   {
     $CI =& get_instance();
 
-		if($CI->session->userdata('id') == FALSE)
-		{
-			redirect(index_page());
-		}
+    if($CI->session->userdata('id') == FALSE)
+    {
+      redirect(index_page());
+    }
+  }
+
+  function validate_admin()
+  {
+    $CI =& get_instance();
+
+    if($CI->Booking_user->is_admin($CI->session->userdata('id')) == FALSE)
+    {
+			redirect('/bookroom');
+    }
   }
 }
 
