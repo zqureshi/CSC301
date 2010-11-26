@@ -2,3 +2,4 @@
 <link rel="stylesheet" href="<?= base_url() ?>css/blueprint/print.css" type="text/css" media="print">  
 <!--[if lt IE 8]><link rel="stylesheet" href="<?= base_url() ?>css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 <link rel="stylesheet" href="<?= base_url() ?>css/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+<script type="text/javascript" src="<?= base_url() ?>js/jquery.js"></script>
