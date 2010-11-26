@@ -10,6 +10,13 @@ class Authentication
     {
       redirect(index_page());
     }
+
+    /* Check if user hasn't been deleted */
+    $result = $CI->Booking_user->get_user('id',$CI->session->userdata('id')); 
+    if(count($result) == 0)
+    {
+      redirect(index_page());
+    }
   }
 
   function validate_admin()
@@ -18,7 +25,7 @@ class Authentication
 
     if($CI->Booking_user->is_admin($CI->session->userdata('id')) == FALSE)
     {
-			redirect('/bookroom');
+      redirect('/bookroom');
     }
   }
 }
