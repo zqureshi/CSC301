@@ -6,6 +6,7 @@ class Login extends Controller {
   {
     parent::Controller();
 
+    /* Disable browser caching */
     $this->headers->disable_caching();
 
     /* Load required models */

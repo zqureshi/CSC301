@@ -6,13 +6,11 @@ class ThirdPage extends Controller {
 	{
 		parent::Controller();	
 
-		/* Check if session is valid first */
-		if($this->session->userdata('id') == FALSE)
-		{
-			redirect(index_page());
-		}
-
+    /* Disable browser caching */
     $this->headers->disable_caching();
+
+		/* Check if session is valid first */
+    $this->authentication->validate_session();
 
 		$this->load->model('thirdpage_model' );
 		$this->load->model('rooms_model' );

@@ -6,13 +6,11 @@ class Bookroom extends Controller {
 	{
 		parent::Controller();	
 
-		/* Check if session is valid first */
-		if($this->session->userdata('id') == FALSE)
-		{
-			redirect(index_page());
-		}
-
+    /* Disable browser caching */
     $this->headers->disable_caching();
+
+		/* Check if session is valid first */
+    $this->authentication->validate_session();
 	}
 	
 	function index($year=null, $month=null)
