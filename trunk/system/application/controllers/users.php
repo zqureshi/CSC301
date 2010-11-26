@@ -105,8 +105,10 @@ class Users extends Controller{
 
   function del_user($id)
   {
-    $this->Booking_user->del_user($id);
+    if($this->session->userdata('id') == $id)
+      return;
 
+    $this->Booking_user->del_user($id);
     redirect('/users/list_users');
   }
 
