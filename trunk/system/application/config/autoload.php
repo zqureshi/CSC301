@@ -39,7 +39,8 @@
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session', 'headers');
+$autoload['libraries'] = 
+  array('database', 'session', 'headers', 'authentication');
 
 
 /*
@@ -108,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array();
+$autoload['model'] = array('Booking_user');
 
 
 
