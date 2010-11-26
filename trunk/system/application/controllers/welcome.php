@@ -10,10 +10,11 @@ class Welcome extends Controller {
     $this->headers->disable_caching();
 	}
 	
-	function index()
+	function index($error=FALSE)
 	{
+    $data['error'] = $error;
     $this->session->sess_destroy();
-		$this->load->view('welcome_message');
+		$this->load->view('welcome_message', $data);
 	}
 
 	function logout()

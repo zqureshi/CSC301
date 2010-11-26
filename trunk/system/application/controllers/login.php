@@ -15,21 +15,50 @@ class Login extends Controller {
 
   function index()
   {
-    $result = $this->Booking_user->
-      get_user('username', $this->input->post('username'));
+    $this->load->library('form_validation');
 
-    if(empty($result)){
-      redirect(index_page());
+    /* Set Validation rules */
+    $rules = array(
+      array(
+        'field' => 'username',
+        'label' => 'Username',
+        'rules' => 'required'
+      ),
+      array(
+        'field' => 'password',
+        'label' => 'Password',
+        'rules' => 'required'
+      ),
+    );
+
+    $this->form_validation->set_rules($rules);
+    $this->form_validation->set_error_delimiters(
+      '<div class="error">',
+      '</div>'
+    );
+
+    if($this->form_validation->run() == FALSE)
+    {
+      $this->load->view('welcome_message');
     }
+    else
+    {
+      $result = $this->Booking_user->
+        get_user('username', $this->input->post('username'));
 
-    $user = $result[0];
+      if(empty($result)){
+        redirect(site_url('/welcome/index/error'));
+      }
 
-    if(dohash($this->input->post('password')) != $user->password){
-      redirect(index_page());
+      $user = $result[0];
+
+      if(dohash($this->input->post('password')) != $user->password){
+        redirect(site_url('/welcome/index/error'));
+      }
+
+      $this->session->set_userdata('id', $user->id);
+      redirect('/book');
     }
-
-    $this->session->set_userdata('id', $user->id);
-    redirect('/book');
   }
 
   function logout()

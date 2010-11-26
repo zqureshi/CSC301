@@ -19,12 +19,20 @@ body {
 </head>
 <body>
 <div class="centered">
+<div class="span-24 last">
+  <?= validation_errors() ?>
+  <?php if(isset($error) && ($error == "error")): ?>
+  <div class="error">
+    The Username and / or Password did not match
+  </div>
+  <?php endif; ?>
+</div>
   <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
   <div class="span-8 prepend-8 append-8 last"> <img src="<?= site_url('img/logo_cropped.png') ?>" width="298" height="114">
 
-      <?= form_open('login') ?>
+      <?= form_open('/login') ?>
       <?= form_label('Username:', 'label_username') ?> 
-	  <?= form_input('username', '') ?>
+      <?= form_input('username', set_value('username')) ?>
       <br/>
       <?= form_label('Password:', 'label_password') ?>
       <?= form_password('password', '') ?>
