@@ -6,6 +6,8 @@ class Recovery extends Controller {
 	{
 		parent::Controller();	
 
+    $this->headers->disable_caching();
+
     /* Load Email library class */
     $this->load->library('email');
 

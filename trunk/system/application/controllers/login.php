@@ -6,6 +6,8 @@ class Login extends Controller {
   {
     parent::Controller();
 
+    $this->headers->disable_caching();
+
     /* Load required models */
     $this->load->model('Booking_user');
   }
