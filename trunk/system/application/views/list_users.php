@@ -26,9 +26,8 @@
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Role</th>
             <th>Username</th>
+            <th>Role</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>E-Mail</th>
@@ -38,9 +37,8 @@
         <tbody>
           <?php foreach($query as $row): ?>
           <tr id="row:<?= $row->id ?>">
-            <td><?= $row->id ?></td>
-            <td><?= ($row->admin == 1) ? 'Admin' : 'User' ?></td>
             <td><?= $row->username ?></td>
+            <td><?= ($row->admin == 1) ? 'Admin' : 'User' ?></td>
             <td><?= $row->first_name ?></td>
             <td><?= $row->last_name ?></td>
             <td><?= $row->email ?></td>

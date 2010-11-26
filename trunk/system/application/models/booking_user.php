@@ -39,6 +39,7 @@ class Booking_user extends Model {
 
   function get_users()
   {
+    $this->db->order_by('id');
     $query = $this->db->get('Users');
 
     return $query->result();
