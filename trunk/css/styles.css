@@ -1,7 +1,5 @@
 @charset "utf-8";
-/* CSS Document */
-
-
+/* CSS Document LaBook 2010 Team Quebec Copyright */
 
 h1 {
   font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
@@ -19,16 +17,11 @@ h2 {
   border-top: solid 1px #000040;
 }
 
-h3, h4, h5, h6 {
-}
-
-.side
-{
+.side{
 	float:left;
 }
 
-.center
-{
+.center{
 	text-align:center;
 	margin:auto;
 }
@@ -118,5 +111,3 @@ dt {
   font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
-
-.navigation .links {
