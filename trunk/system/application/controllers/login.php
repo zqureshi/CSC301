@@ -57,7 +57,7 @@ class Login extends Controller {
       }
 
       $this->session->set_userdata('id', $user->id);
-      redirect('/book');
+      redirect('/bookroom');
     }
   }
 

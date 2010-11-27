@@ -10,12 +10,12 @@
 <?php 
 if($is_admin == TRUE)
 {
-  echo anchor('users','Settings','target="mainFrame"'), " | ";
+  echo anchor('users','Settings'), " | ";
 }
 ?> 
-<?= anchor('/profile', 'Profile', 'target="mainFrame"') ?> | 
+<?= anchor('/profile', 'Profile') ?> | 
 Logged in as <?=$id?> | 
-<?=anchor('login/logout','Log out','target="_top"');?></div>
+<?=anchor('login/logout','Log out');?></div>
 <HR>
 </body>
 

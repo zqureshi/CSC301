@@ -6,14 +6,18 @@ class ThirdPage extends Controller {
 	{
 		parent::Controller();	
 
-    /* Disable browser caching */
-    $this->headers->disable_caching();
+    		/* Disable browser caching */
+    		$this->headers->disable_caching();
 
 		/* Check if session is valid first */
-    $this->authentication->validate_session();
+    		$this->authentication->validate_session();
 
 		$this->load->model('thirdpage_model' );
-		$this->load->model('rooms_model' );
+	    	$this->load->model('rooms_model' );
+	        $this->load->model('side_model');
+		$array = $this->side_model->current_booking();
+                $this->load->view('bar', $array);
+    
 	}
 	
   function index($year=null, $month=null,$day=null, $room=null, $slot=null)

@@ -8,7 +8,7 @@
 <body>
 <table width="295" border="0">
   <tr>
-    <td height="117" colspan="2"><a href="/bookroom" target="mainFrame"><img src="<?= site_url('img/logo_cropped.png')?>" width="288" height="108" border="0" /></a></td>
+    <td height="117" colspan="2"><a href="/bookroom"><img src="<?= site_url('img/logo_cropped.png')?>" width="288" height="108" border="0" /></a></td>
   </tr>
   <tr>
     <td colspan="2"><p class="center">Your Current Bookings</p>      </td>

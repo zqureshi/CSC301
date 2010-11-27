@@ -14,6 +14,9 @@ class Users extends Controller{
 
     /* Check if user accessing is an administrator */
     $this->authentication->validate_admin();
+    $this->load->model('side_model');
+    $array = $this->side_model->current_booking();
+    $this->load->view('bar', $array);    
   }
 
   function list_users()

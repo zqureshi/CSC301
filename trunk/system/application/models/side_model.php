@@ -6,6 +6,7 @@ class Side_model extends Model {
 	function Side_model () {
 		parent::Model();
 		$this->load->model('rooms_model');
+		$this->load->model('booking_user');
 	}
 
 	function current_booking(){
@@ -22,7 +23,13 @@ class Side_model extends Model {
 		$sql = "SELECT * FROM booking WHERE id=$user AND Date>='$date' ORDER BY Date" ; 
 		$query = $this->db->query($sql);
 
-                return $query->result();
+                $id = $this->booking_user->get_username($user);
+                $is_admin = $this->booking_user->is_admin($user);
+
+                $array = array('query' => $query->result(), 'id' => $id, 'is_admin' => $is_admin);
+
+                return $array;
 	}
 }
+
 
