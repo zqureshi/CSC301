@@ -50,9 +50,9 @@ td.solid{
 	width: 80px;
 	height: 80px;
 	padding: 4px;
-	border: 1px solid #999;
+	border: 1px solid #FFF;
 	vertical-align: top;
-	background-color: #8AB8E6;
+	background-color: #FFF;
 }
 
 .day:hover {
