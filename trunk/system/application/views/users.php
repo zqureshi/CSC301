@@ -13,19 +13,45 @@
       </div>
 
       <div class="span-20 prepend-4 last">
-        <div class="span-8 info">
-          <h3 style="text-align: center">
-            <?= anchor('users/list_users', 'List Users') ?>
-          </h3>
-        </div>
-
-        <div class="span-8 info last">
-          <h3 style="text-align: center">
-            <?= anchor('users/add_user_form', 'Add Users') ?>
-          <h3>
-        </div>
+        <table border="0">
+          <tr>
+            <td>
+              <div class="span-8 info">
+                <h3 style="text-align: center">
+                  <?= anchor('users/list_users', 'List Users') ?>
+                </h3>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="span-8 info last">
+                <h3 style="text-align: center">
+                  <?= anchor('users/add_user_form', 'Add Users') ?>
+                <h3>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="span-8 info last">
+                <h3 style="text-align: center">
+                  <?= anchor('users/room_time', 'Room and Time settings') ?>
+                <h3>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="span-8 info last">
+                <h3 style="text-align: center">
+                  <?= anchor('users/variables', 'Booking settings') ?>
+                <h3>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
-
     </div>
   </body>
 </html>

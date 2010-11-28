@@ -1,8 +1,6 @@
 <?php
 class Side_model extends Model {
 	
-	var $data = '';
-
 	function Side_model () {
 		parent::Model();
 		$this->load->model('rooms_model');

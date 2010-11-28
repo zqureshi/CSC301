@@ -9,14 +9,47 @@ class Users extends Controller{
     /* Disable browser caching */
     $this->headers->disable_caching();
 
-		/* Check if session is valid first */
+    /* Check if session is valid first */
     $this->authentication->validate_session();
 
     /* Check if user accessing is an administrator */
     $this->authentication->validate_admin();
+
     $this->load->model('side_model');
     $array = $this->side_model->current_booking();
     $this->load->view('bar', $array);    
+  }
+
+  function room_time()
+  {
+    $this->load->model('database_model');
+    $data['query'] = $this->database_model->get_time();
+    $this->load->view('room_time', $data);
+  }
+
+  function update_time()
+  {
+    $this->load->model('database_model');
+    /*$this->database_model->update_time();*/
+    $data['query'] = $this->database_model->get_time();
+    $data['success'] = TRUE;
+    $this->load->view('room_time', $data);
+  }
+
+  function variables()
+  {
+    $this->load->model('database_model');
+    $data['query'] = $this->database_model->get_contants();
+    $this->load->view('variables', $data);
+  }
+
+  function update_booking()
+  {
+    $this->load->model('database_model');
+    $this->database_model->update_booking();
+    $data['query'] = $this->database_model->get_contants();
+    $data['success'] = TRUE;
+    $this->load->view('variables', $data);
   }
 
   function list_users()
