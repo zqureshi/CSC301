@@ -8,7 +8,7 @@ table.calendar {
 	border-collapse: collapse;
 }
 
-td.day {
+td.day{
 	width: 80px;
 	height: 80px;
 	padding: 4px;
@@ -17,7 +17,7 @@ td.day {
 	background-color: #99CCFF;
 }
 
-td.day2 {
+td.day2{
 	width: 80px;
 	height: 80px;
 	padding: 4px;
@@ -28,16 +28,25 @@ td.day2 {
 	background-color: #87CEEB;
 }
 
-td.day_booked {
+td.day_booked{
 	width: 80px;
 	height: 80px;
 	padding: 4px;
 	border: 1px solid #999;
-	vertical-align: top;	
 	background-color: #4C6680;
 }
 
-td.solid {
+td.day_booked_by_me{
+	width: 80px;
+	height: 80px;
+	padding: 4px;
+	border: 1px solid #999;
+	vertical-align: center;	
+	background-color: #4169E1;
+}
+
+
+td.solid{
 	width: 80px;
 	height: 80px;
 	padding: 4px;
@@ -49,8 +58,10 @@ td.solid {
 .day:hover {
 	background-color: #FFF;
 }
-
 .day_booked:hover {
+	background-color: #FFF;
+}
+.day_booked_by_me:hover {
 	background-color: #FFF;
 }
 

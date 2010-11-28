@@ -5,23 +5,29 @@ class ThirdPage extends Controller {
 	function ThirdPage()
 	{
 		parent::Controller();	
-
-    		/* Disable browser caching */
-    		$this->headers->disable_caching();
+		/* Disable browser caching */
+		$this->headers->disable_caching();
 
 		/* Check if session is valid first */
-    		$this->authentication->validate_session();
+		$this->authentication->validate_session();
 
 		$this->load->model('thirdpage_model' );
-	    	$this->load->model('rooms_model' );
+		$this->load->model('bookroom_model' );
+		$this->load->model('rooms_model' );
+
 	        $this->load->model('side_model');
 		$array = $this->side_model->current_booking();
                 $this->load->view('bar', $array);
-    
 	}
 	
-  function index($year=null, $month=null,$day=null, $room=null, $slot=null)
-  {
+	function index($year=null, $month=null,$day=null, $room=null, $slot=null){
+		
+		/* Check if session is valid first */
+		if($this->session->userdata('id') == FALSE)
+		{
+			redirect('/welcome');
+		}
+		
 		if(($year == null) || ($month == null)|| ($day == null)|| ($room == null)|| ($slot == null)){
 			$data['year']= date("Y");
 			$data['month'] = date("m");
@@ -50,7 +56,27 @@ class ThirdPage extends Controller {
 		//
 		// Add data to database.
 		$this->rooms_model->add_to_db($year,$month,$day,$room,$slot,$notes,$course,$user);
+		
+		$data['year']= $year;
+		$data['month'] = $month ;  
+		$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
+		$this->load->view('bookroom',$data);
 	
+	}
+	
+	function delete($year=null, $month=null,$day=null, $room=null, $slot=null){
+		if(!($year==null || $month==null || $day==null || $room==null || $slot==null)){
+			$userId = $this->rooms_model->get_user_id($year,$month,$day,$room, $slot);
+			if($this->session->userdata('id') == $userId){
+				$temp = $this->rooms_model->delete_from_db($year,$month,$day,$room,$slot);
+				$data['year']= $year;
+				$data['month'] = $month ;  
+				$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
+				$this->load->view('bookroom',$data);
+			}			
+		}else{
+			echo "Error" ;
+		}
 	}
 }
 

@@ -79,7 +79,7 @@ class Bookroom_model extends Model {
 				<tr class='highlight'>
 				<td>Su</td><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td>
 				</tr>				
-				<tr class='days'>"."\n";
+				<tr valign=\"top\" class='days'>"."\n";
 		
 		
 		// Adjustment of date starting
@@ -97,7 +97,7 @@ class Bookroom_model extends Model {
 			$adj='';
 			$j ++;
 			if($j==7){
-				$this->conf['calendar'] .= "</tr>" . "\n" ."<tr class='days'>" ."\n";
+				$this->conf['calendar'] .= "</tr>" . "\n" ."<tr valign=\"top\"  class='days'>" ."\n";
 				$j=0;
 			}
 		}

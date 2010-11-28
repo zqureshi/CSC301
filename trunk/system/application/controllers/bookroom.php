@@ -14,7 +14,6 @@ class Bookroom extends Controller {
 	        $this->load->model('side_model');
 		$array = $this->side_model->current_booking();
                 $this->load->view('bar', $array);
-		
 	}
 	
 	function index($year=null, $month=null)
