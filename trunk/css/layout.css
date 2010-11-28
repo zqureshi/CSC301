@@ -14,7 +14,7 @@ td.day{
 	padding: 4px;
 	border: 1px solid #999;
 	vertical-align: top;
-	background-color: #99CCFF;
+	background-color: #CCCCCC;
 }
 
 td.day2{
@@ -52,7 +52,7 @@ td.solid{
 	padding: 4px;
 	border: 1px solid #999;
 	vertical-align: top;
-	background-color: #8AB8E6;
+	background-color: #999999;
 }
 
 .day:hover {
