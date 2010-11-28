@@ -4,7 +4,7 @@
 </head>
 <body>
 <!-- Top Panel -->
-<div align="right">
+<div class="sidestyles">
   <?php 
 if($is_admin == TRUE)
 {
@@ -20,7 +20,7 @@ if($is_admin == TRUE)
 </div>
 <HR>
 <!-- Side Panel -->
-<span class="side">
+<div class="side">
 <table width="295" border="0">
   <tr>
     <td height="117" colspan="2"><a href="/bookroom"><img src="<?= site_url('img/logo_cropped.png')?>" width="288" height="108" border="0" /></a></td>
@@ -36,7 +36,7 @@ if($is_admin == TRUE)
                 $link = "/thirdPage/index/";
                 $link .= date_format(date_create($row->Date), "Y/m/d") ;
                 $link .= "/$row->rID/$row->tID";
-                $temp1 = date_format(date_create($row->Date), "M j, Y") ;
+                $temp1 = date_format(date_create($row->Date), "M d, Y") ;
 		        $temp2 = $this->rooms_model->get_slot_name($row->tID) ; ?>
       <li>
         <?= anchor($link, $temp1 .' : '. $temp2); ?>
@@ -46,6 +46,7 @@ if($is_admin == TRUE)
     </td>
   </tr>
 </table>
-</span>
+</div>
 </body>
 </html>
+

@@ -17,6 +17,10 @@ class Profile extends Controller{
 
     /* load html helper */
     $this->load->helper('html');
+
+    $this->load->model('side_model');
+    $array = $this->side_model->current_booking();
+    $this->load->view('bar', $array);
   }
 
   function index($success=FALSE)

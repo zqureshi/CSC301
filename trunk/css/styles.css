@@ -19,6 +19,15 @@ h2 {
 
 .side{
 	float:left;
+        float.left: none;
+        font-size: 17px;
+        font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+}
+
+.sidestyles{
+	text-align:right;
+        font-size: 17px;
+        font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
 }
 
 .center{
@@ -97,6 +106,12 @@ a:visited {
   clear: both;
 }
 
+ppppp {
+  padding: 0;
+  margin-top: 0px;
+  font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
+}
+
 p {
   padding: 0;
   margin-top: 0px;
@@ -111,3 +126,4 @@ dt {
   font-family: Verdana, Geneva, Lucida, Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
+
