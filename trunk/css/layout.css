@@ -14,7 +14,7 @@ td.day{
 	padding: 4px;
 	border: 1px solid #999;
 	vertical-align: top;
-	background-color: #FFFFFF;
+	background-color: #99CCFF;
 }
 
 td.day2{
@@ -33,7 +33,7 @@ td.day_booked{
 	height: 80px;
 	padding: 4px;
 	border: 1px solid #999;
-	background-color: #C2C2C2;
+	background-color: #4C6680;
 }
 
 td.day_booked_by_me{
@@ -52,7 +52,7 @@ td.solid{
 	padding: 4px;
 	border: 1px solid #999;
 	vertical-align: top;
-	background-color: #FFFFFF;
+	background-color: #8AB8E6;
 }
 
 .day:hover {
