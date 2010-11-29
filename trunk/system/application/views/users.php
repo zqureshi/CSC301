@@ -49,6 +49,15 @@
                 <h3>
               </div>
             </td>
+	  </tr>
+          <tr>
+            <td>
+              <div class="span-8 info last">
+                <h3 style="text-align: center">
+                  <?= anchor('massbook', 'Mass Booking') ?>
+                <h3>
+              </div>
+            </td>
           </tr>
         </table>
       </div>

@@ -7,20 +7,21 @@ class Massbook extends Controller {
 	function Massbook()
 	{
 		parent::Controller();	
+    		/* Disable browser caching */
+		$this->headers->disable_caching();
+
+		/* Check if session is valid first */
+		$this->authentication->validate_session();
+
 		$this->load->model('massbook_model' );	
 		$this->load->helper('url');
-		
+
+	        $this->load->model('side_model');
+		$array = $this->side_model->current_booking();
+                $this->load->view('bar', $array);		
 	}
 	
-	function index($errNo=null){	
-		/* Check if session is valid first */
-//		if($this->session->userdata('id') == FALSE)
-//		{
-//			redirect('/welcome');
-//		}
-//		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-					
-		
+	function index($errNo=null){				
 		$data['content'] = $this->massbook_model->generate_content($errNo);
 		$this->load->view('massbook',$data);
 		
