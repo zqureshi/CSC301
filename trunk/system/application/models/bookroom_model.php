@@ -3,20 +3,26 @@ class Bookroom_model extends Model {
 	
 	var $conf;
 	// Maximum booking capacity per day
-	var $maxBooking = 1;
+	var $maxBooking ;
 	
 	function Bookroom_model () {
 		parent::Model();
 		$this->load->database();
-
+		$this->load->model('rooms_model');
 		$this->conf['calendar'] = '';		
 	}
+	
+	
 	
 	/*
 	 * Checks whether the given date has been entirely booked or not. 
 	 * Return 1 if fully booked.
 	 */
 	function fully_booked($year, $month, $day) {
+		// The maximum number of bookings available in any day.
+		// This number is fugured out by the multiplication of the number of rooms with
+		// number of slots.
+		$this->maxBooking =  $this->rooms_model->get_number_of_rooms() * $this->rooms_model->get_number_of_slots() ;
 		return (($this->maxBooking <= $this->number_of_bookings($year, $month, $day)) ? 1 : 0) ; 
 	}
 	
@@ -32,11 +38,12 @@ class Bookroom_model extends Model {
 	/*
 	 * Returns the HTML code of the calendar to be displayed on the screen.
 	 */
-	function generate_calendar($year, $month){
+	function generate_calendar($year, $month){		
+				
 		$adj = "";
 		$prevYear = 0 ;
 		$nextYear = 0 ;
-		
+		$currentMonth = date("m") ;
 		// Finds today's date
 		$d= date("d");     
 		// Finds today's year
@@ -88,11 +95,17 @@ class Bookroom_model extends Model {
 		}
 		
 		for($i=1;$i<=$no_of_days;$i++){
-			if($this->fully_booked($year,$month,$i) == 1){
-				$class = "day_booked"; 
+			if(($i == $d) && ($month == $currentMonth)){
+				$class = "current_day";
 			}else{
-				$class = "day";
+				if($this->fully_booked($year,$month,$i) == 1){
+					$class = "day_booked"; 
+				}else{
+					$class = "day";
+				}
+				
 			}
+			
 			$this->conf['calendar'] .= $adj."<td class='$class' ><div class='day_num'>$i</div></td>"."\n"; // This will display the date inside the calendar cell
 			$adj='';
 			$j ++;

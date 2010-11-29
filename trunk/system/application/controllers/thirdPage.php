@@ -14,6 +14,7 @@ class ThirdPage extends Controller {
 		$this->load->model('thirdpage_model' );
 		$this->load->model('bookroom_model' );
 		$this->load->model('rooms_model' );
+		$this->load->helper('url');
 
 	        $this->load->model('side_model');
 		$array = $this->side_model->current_booking();
@@ -53,9 +54,13 @@ class ThirdPage extends Controller {
 		$course = $_POST['course'];
 		$user = $_POST['user'];
 		// After some validation procedures add the date into the database.
-		//
+		
 		// Add data to database.
-		$this->rooms_model->add_to_db($year,$month,$day,$room,$slot,$notes,$course,$user);
+		if ($course != "" && isset($slot) && isset($room) && isset($year) && isset($month) && isset($day) && isset($course) && isset($user)){
+			$this->rooms_model->add_to_db($year,$month,$day,$room,$slot,$notes,$course,$user);
+		}else{
+			redirect("/thirdPage/index","location");
+		}
 		
 		$data['year']= $year;
 		$data['month'] = $month ;  
@@ -79,6 +84,7 @@ class ThirdPage extends Controller {
 		}
 	}
 }
+	
 
 /* End of file welcome.php */
 /* Location: ./system/application/controllers/welcome.php */
