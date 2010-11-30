@@ -16,38 +16,65 @@ class Users extends Controller{
     $this->authentication->validate_admin();
 
     $this->load->model('side_model');
+    $this->load->model('Database_model');
     $array = $this->side_model->current_booking();
     $this->load->view('bar', $array);    
   }
 
-  function room_time()
+  function room_time($time=null)
   {
-    $this->load->model('database_model');
-    $data['query'] = $this->database_model->get_time();
+    $data['time'] = $this->Database_model->get_room_time('time');
+    $data['room'] = $this->Database_model->get_room_time('room');
+    $data['success'] = $time;
     $this->load->view('room_time', $data);
   }
 
   function update_time()
   {
-    $this->load->model('database_model');
-    /*$this->database_model->update_time();*/
-    $data['query'] = $this->database_model->get_time();
-    $data['success'] = TRUE;
-    $this->load->view('room_time', $data);
+    $this->Database_model->update_room_time('time', 'tID');
+    redirect('/users/room_time/time');
+  }
+
+  function update_room()
+  {
+    $this->Database_model->update_room_time('room', 'rID');
+    redirect('/users/room_time/room');
+  }
+
+  function add_time()
+  {
+    $this->Database_model->add_room_time('time', 'new_time');
+    redirect('/users/room_time/time');
+  }
+
+  function add_room()
+  {
+    $this->Database_model->add_room_time('room', 'new_room');
+    redirect('/users/room_time/room');
+  }
+
+  function del_time($id)
+  {
+    $this->Database_model->del_room_time($id, 'time', 'tID');
+    redirect('/users/room_time');
+  }
+
+  function del_room($id)
+  {
+    $this->Database_model->del_room_time($id, 'room', 'rID');
+    redirect('/users/room_time');
   }
 
   function variables()
   {
-    $this->load->model('database_model');
-    $data['query'] = $this->database_model->get_contants();
+    $data['query'] = $this->Database_model->get_contants();
     $this->load->view('variables', $data);
   }
 
   function update_booking()
   {
-    $this->load->model('database_model');
-    $this->database_model->update_booking();
-    $data['query'] = $this->database_model->get_contants();
+    $this->Database_model->update_booking();
+    $data['query'] = $this->Database_model->get_contants();
     $data['success'] = TRUE;
     $this->load->view('variables', $data);
   }

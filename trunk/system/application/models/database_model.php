@@ -2,43 +2,60 @@
 
 class Database_model extends Model {
 
-  var $max_num = '';
-  var $future  = '';
-
   function Database_model()
   {
     parent::Model();
   }
 
-  function get_time()
+  function get_room_time($var)
   {
-    $query = $this->db->get('time');
+    $query = $this->db->get($var);
     
     return $query->result();
   }
 
-  function update_time()
+  function add_room_time($item, $id)
   {
-    foreach ($query as $row):
-        xss_clean($this->input->post('email'));
-	form_input($row->tID, $row->tID);
-    endforeach;
-    $this->db->update('time', $data);
+    $this->name = xss_clean($this->input->post($id));
+
+    $this->db->insert($item, $this);
+  }
+
+  function update_room_time($item, $id)
+  {
+    $query = $this->get_room_time($item);
+    foreach($query as $row){
+        $this->name = xss_clean($this->input->post($row->$id));
+        $this->db->where($id, $row->$id);
+        $this->db->update($item, $this);
+    }
   }
 
   function get_contants()
   {
     $query = $this->db->get('variables');
 
-    return $query->row();
+    return $query;
   }
 
   function update_booking()
   {
-    $this->max_num = xss_clean($this->input->post('max_num'));
-    $this->future  = xss_clean($this->input->post('future'));
-
+    $this->value = xss_clean($this->input->post('maxBookings'));
+    $this->db->where('name', 'maxBookings');
     $this->db->update('variables', $this);
+
+    $this->value = xss_clean($this->input->post('limitDate'));
+    $this->db->where('name', 'limitDate');
+    $this->db->update('variables', $this);
+  }
+
+  function del_room_time($id, $item, $whatid)
+  {
+    $this->db->where($whatid, $id);
+    $this->db->delete($item);
+    /* delete all bookings of a given time/room*/
+    $this->db->where($whatid, $id);
+    $this->db->delete('booking');
   }
 }
 
