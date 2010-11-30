@@ -24,11 +24,11 @@
         <table>
           <tr>
             <td>Maximum Number of Bookings</td>
-            <td><?= form_input('max_num', $query->max_num) ?></td>
+            <td><?= form_input('maxBookings', $query->row()->value) ?></td>
           </tr>
           <tr>
-            <td>Future Bookings</td>
-            <td><?= form_input('future', $query->future) ?></td>
+            <td>Future Bookings (Year-Month-Day)</td>
+            <td><?= form_input('limitDate', $query->next_row()->value) ?></td>
           </tr>
         </table>
         <?= form_submit('Save', 'Update') ?>
