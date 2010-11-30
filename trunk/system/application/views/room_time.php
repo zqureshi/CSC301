@@ -33,13 +33,15 @@
       </div>
 
       <div class="span-24 last">
-        <div class="success" style="text-align: center">
-          <?php if($success=='time'){ ?>
+        <?php if($success=='time'){ ?>
+          <div class="success" style="text-align: center">
             Times Settings Successfully Changed
-          <?php }else if($success=='room'){ ?>
+          </div>
+        <?php }else if($success=='room'){ ?> 
+          <div class="success" style="text-align: center">
             Room Settings Successfully Changed
-          <?php } ?>
-        </div>
+          </div>
+        <?php } ?>
       </div>
 
       <!-- Display the table to edit time settings. -->
