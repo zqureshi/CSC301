@@ -45,6 +45,14 @@ td.day_booked_by_me{
 	background-color: #4169E1;
 }
 
+td.current_day{
+	width: 80px;
+	height: 80px;
+	padding: 4px;
+	border: 1px solid #999;
+	vertical-align: center;	
+	background-color: #FFFF00;
+}
 
 td.solid{
 	width: 80px;
@@ -55,6 +63,7 @@ td.solid{
 	background-color: #8AB8E6;
 }
 
+
 .day:hover {
 	background-color: #FFF;
 }
@@ -62,6 +71,10 @@ td.solid{
 	background-color: #FFF;
 }
 .day_booked_by_me:hover {
+	background-color: #FFF;
+}
+
+.current_day:hover {
 	background-color: #FFF;
 }
 
