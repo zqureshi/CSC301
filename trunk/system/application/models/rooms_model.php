@@ -8,6 +8,7 @@ class Rooms_model extends Model {
 		$this->load->database();			
 	}
 	
+	
 	/*
 	 * Return the latest date one can make a booking.
 	 */
@@ -92,6 +93,26 @@ class Rooms_model extends Model {
 		}	
 	}
 	
+	/*
+	 * Returns the list of room names.
+	 */
+	function get_rooms(){
+		$sql = "SELECT * FROM room" ; 
+		$query = $this->db->query($sql);
+		return $query ;			
+		
+	}
+	
+	
+	/*
+	 * Returns the list of slot names.
+	 */
+	function get_slots(){
+		$sql = "SELECT * FROM time" ; 
+		$query = $this->db->query($sql);	
+		return $query ;		
+	}
+
 
 	/*
 	 * Returns 1 if the given user exists in the database, 0 otherwise.
@@ -190,7 +211,12 @@ class Rooms_model extends Model {
 					.$this->db->escape($confirmation).", "
 					.$this->db->escape($notes)
 					.")";
-				$query = $this->db->query($sql);		
+				// To make sure there are no users booking at the same time, 
+				// just check again to see if the booking has been made or not.
+				// WARNING: This doesnt handle simultanius bookings, where it could give an error message.
+				if($this->is_booked($year,$month,$day,$roomId, $slotId) == 0){
+					$query = $this->db->query($sql);
+				}							
 			}	
 		}else{
 			// DO NOT BOOK.
@@ -207,16 +233,15 @@ class Rooms_model extends Model {
 	}
 	
 	
+	
+	
 	/*
-	 * Given a user id deletes all the bookings associated with that user.
+	 * Generates the schedule to display on the screen.
 	 */
-	function delete_all_bookings($user){		
-		$sql = "DELETE FROM booking WHERE id=$user" ; 
-		$query = $this->db->query($sql);	
-	}
-	
-	
 	function generate_schedule($year, $month, $day){	
+		$querySlot = $this->get_slots()->result();
+		$queryRoom = $this->get_rooms()->result();
+
 		// Figure out the id of the current User from the session info.
 		$currentUser = $this->session->userdata('id') ;
 		
@@ -242,32 +267,39 @@ class Rooms_model extends Model {
 			}
 			
 			for ($j = 0 ; $j < $numOfRooms + 1; $j++) {
-				if($this->is_booked($year, $month, $day,$j,$i)!= 0){					
-					if($currentUser == ($this->get_user_id($year,$month,$day,$j, $i))){
-						$class = "day_booked_by_me";
-						$dispNote = "My Booking";					
-					}else{
-						$class = "day_booked";
-						$dispNote = "Booked by " . $this->get_username_by_id($this->get_user_id($year,$month,$day,$j, $i));			
-					} 
-				}else{
-					$class = "day";
-					$dispNote = "";
-				}
+				
 				
 				if( $i == 0 && $j == 0){
 					// This is the corner cell of the rooms and the times, hence needs to be empty.
 					$this->data .= "<td></td>" . "\n";
 				}else if( $i == 0 ){
 					// Get the name of the rooms
-					$temp = $this->get_room_name($j);					
-					$this->data .= "<td class='day2' room='$j' slot='$i'>$temp</td>" . "\n";
+					//$temp = $this->get_room_name($j);	
+					$temp = $queryRoom[$j-1]->name ;				
+					//$this->data .= "<td class='day2' room='$j' slot='$i'>$temp</td>" . "\n";
+					$this->data .= "<td class='day2'>$temp</td>" . "\n";
 				}else if($j == 0){
 					// Get the name of the time slots.
-					$temp = $this->get_slot_name($i);
-					$this->data .= "<td class='day2' room='$j' slot='$i'>$temp</td>" . "\n";
+					//$temp = $this->get_slot_name($i);
+					$temp = $querySlot[$i-1]->name ;
+					//$this->data .= "<td class='day2' room='$j' slot='$i'>$temp</td>" . "\n";
+					$this->data .= "<td class='day2'>$temp</td>" . "\n";
 				}else{
-					$this->data .= "<td class='$class' room='$j' slot='$i'>$dispNote</td>" . "\n";
+					$temp1 = $queryRoom[$j-1]->rID ;
+					$temp2 = $querySlot[$i-1]->tID ;
+					if($this->is_booked($year, $month, $day,$temp1,$temp2)!= 0){					
+						if($currentUser == ($this->get_user_id($year,$month,$day,$temp1, $temp2))){
+							$class = "day_booked_by_me";
+							$dispNote = "My Booking";					
+						}else{
+							$class = "day_booked";
+							$dispNote = "Booked by " . $this->get_username_by_id($this->get_user_id($year,$month,$day,$temp1, $temp2));			
+						} 
+					}else{
+						$class = "day";
+						$dispNote = "";
+					}
+					$this->data .= "<td class='$class' room='$temp1' slot='$temp2'>$dispNote</td>" . "\n";
 				}
 			}	
 			$this->data .= "</tr>". "\n";
@@ -276,6 +308,8 @@ class Rooms_model extends Model {
 		$this->data .= "</table>". "\n";
 		return $this->data ;
 	}
+
+
 	
 	/* MOVED FROM MASSBOOK_PAGE MODEL TO HERE. */	
 
@@ -372,6 +406,25 @@ class Rooms_model extends Model {
 			return 1 ;
 		}
 		
+	}
+	
+	/*  FUNSTIONS TO FLUSH THE DATABASE*/
+	
+	
+	/*
+	 * Given a user id deletes all the bookings associated with that user.
+	 */
+	function delete_all_bookings($user){		
+		$sql = "DELETE FROM booking WHERE id=$user" ; 
+		$query = $this->db->query($sql);	
+	}
+	
+/*
+	 * Given a user id deletes all the bookings associated with that user.
+	 */
+	function delete_user($user){		
+		$sql = "DELETE FROM Users WHERE id=$user" ; 
+		$query = $this->db->query($sql);
 	}
 	
 	

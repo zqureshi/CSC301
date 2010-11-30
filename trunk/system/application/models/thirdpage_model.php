@@ -101,7 +101,7 @@ class Thirdpage_model extends Model {
 							$this->data .= "		<td><b>Booking Between:</b></td><td>$temp2</td>"."\n";
 							$this->data .= "	</tr>"."\n";			
 							$this->data .= "	<tr VALIGN=\"top\">"."\n";
-							$this->data .= "		<td><b>Course:</b></td><td><input style=\"width:100%\" type=\"text\" name=\"course\" /></td>"."\n";
+							$this->data .= "		<td><b>*Course:</b></td><td><input style=\"width:100%\" type=\"text\" name=\"course\" /></td>"."\n";
 							$this->data .= "	</tr>"."\n";
 							$this->data .= "	<tr VALIGN=\"top\">"."\n";
 							$this->data .= "		<td><b>Notes:</b></td><td><textarea style=\"width:100%\" name=\"notes\" ></textarea></td>"."\n";
