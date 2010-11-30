@@ -20,21 +20,16 @@ class ThirdPage extends Controller {
 		$array = $this->side_model->current_booking();
                 $this->load->view('bar', $array);
 	}
-	
+
 	function index($year=null, $month=null,$day=null, $room=null, $slot=null){
-		
-		/* Check if session is valid first */
-		if($this->session->userdata('id') == FALSE)
-		{
-			redirect('/welcome');
-		}
-		
+	
 		if(($year == null) || ($month == null)|| ($day == null)|| ($room == null)|| ($slot == null)){
-			$data['year']= date("Y");
-			$data['month'] = date("m");
-			$data['day'] = date("d"); 
-			$data['content'] = $this->thirdpage_model->generate_content($year,$month,$day,$room,$slot);
-			$this->load->view('thirdPage',$data);
+			redirect("/bookroom","location");		
+//			$data['year']= date("Y");
+//			$data['month'] = date("m");
+//			$data['day'] = date("d"); 
+//			$data['content'] = $this->thirdpage_model->generate_content($year,$month,$day,$room,$slot);
+//			$this->load->view('thirdPage',$data);
 		}else{
 			$data['year']= $year;
 			$data['month'] = $month ;
@@ -59,13 +54,14 @@ class ThirdPage extends Controller {
 		if ($course != "" && isset($slot) && isset($room) && isset($year) && isset($month) && isset($day) && isset($course) && isset($user)){
 			$this->rooms_model->add_to_db($year,$month,$day,$room,$slot,$notes,$course,$user);
 		}else{
-			redirect("/thirdPage/index","location");
+			redirect("/thirdPage/index/$year/$month/$day/$room/$slot","location");
 		}
 		
-		$data['year']= $year;
-		$data['month'] = $month ;  
-		$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
-		$this->load->view('bookroom',$data);
+//		$data['year']= $year;
+//		$data['month'] = $month ;  
+//		$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
+//		$this->load->view('bookroom',$data);
+		redirect("/bookroom/index/$year/$month","location");
 	
 	}
 	

@@ -11,6 +11,7 @@ class Rooms extends Controller {
 
 		/* Check if session is valid first */
 		$this->authentication->validate_session();
+
 	        $this->load->model('side_model');
 		$array = $this->side_model->current_booking();
                 $this->load->view('bar', $array);
@@ -37,6 +38,3 @@ class Rooms extends Controller {
 		}
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./system/application/controllers/welcome.php */

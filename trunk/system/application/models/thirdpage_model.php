@@ -7,7 +7,7 @@ class Thirdpage_model extends Model {
 		parent::Model();
 		$this->load->database();
 		$this->load->model('rooms_model');
-        $this->load->model('booking_user');
+		$this->load->model('booking_user');
 	}
 
 	/*

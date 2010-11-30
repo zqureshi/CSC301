@@ -13,6 +13,9 @@ class Massbook extends Controller {
 		/* Check if session is valid first */
 		$this->authentication->validate_session();
 
+		/* Check if user accessing is an administrator */
+		$this->authentication->validate_admin();
+
 		$this->load->model('massbook_model' );	
 		$this->load->helper('url');
 
@@ -21,7 +24,7 @@ class Massbook extends Controller {
                 $this->load->view('bar', $array);		
 	}
 	
-	function index($errNo=null){				
+	function index($errNo=null){	
 		$data['content'] = $this->massbook_model->generate_content($errNo);
 		$this->load->view('massbook',$data);
 		

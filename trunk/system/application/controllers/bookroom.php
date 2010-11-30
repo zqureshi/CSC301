@@ -34,5 +34,5 @@ class Bookroom extends Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./system/application/controllers/welcome.php */
+/* End of file bookroom.php */
+/* Location: ./system/application/controllers/bookroom.php */
