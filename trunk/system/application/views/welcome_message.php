@@ -39,7 +39,7 @@ body {
       <?= form_close() ?>
 
   </div>
-  <?= anchor('/recovery', 'Lost Password?') ?>
+  <div align="right"><?= anchor('/recovery', 'Lost Password?') ?></div>
   <div><span class="span-24 prepend-top last"><img src="<?= site_url('img/frame_hor.png') ?>" width=100% height="30"></span></div>
   <div class="span-24 last" id="footer"> </div>
 </div>
