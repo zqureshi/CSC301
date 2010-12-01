@@ -1,0 +1,347 @@
+Test:
+User tries to login with invalid username
+Procedure:
+1. User goes to main login page
+2. user enters an ivalid username and some password
+Behaviour:
+User is redirected back to login page showing error message
+
+Test:
+User tries to login with invalid password
+Procedure:
+1. User goes to main login page
+2. users enters a valid username and wrong password
+Behaviour:
+User is redirected back to login page showing error message
+
+Test:
+User login with proper credentials
+Procedure:
+1. User goes to main login page
+2. user enters valid credentials
+Behaviour:
+A session is created for the user and is presented with the booking calendar
+
+Test:
+User tries to access secured pages without logging in
+Procedure:
+1. User tries to access any page other than the login page
+Behaviour:
+User is redirected back to the login page
+
+Test:
+User logs out
+Procedure:
+1. User clicks on the logout button
+Behaviour:
+User's session is destroyed and is redirected back to the login page
+
+Test:
+User tries to recover password
+Procedure:
+1. User clicks on the recovery option and enters his username
+2. User receives email on the associated id and clicks link in email
+3. User enters new password
+Behaviour:
+The user's password is now changed to the new one
+
+Test:
+User tries to book a room after current date (success)
+Procedure:
+1. User clicks on a day in the future on the calendar
+2. User clicks on a available room and time slot
+3. User enters what course he/she is book for
+4. User click book
+Behaviour:
+The booking has been made and the user is redirected back to the calendar page
+
+Test:
+User tries to book a room after current date (fail)
+Procedure:
+1. User clicks on a day in the future on the calendar
+2. User clicks on a available room and time slot
+3. User enters what course he/she is book for
+4. User click book
+Behaviour:
+Because of the errors in the fields user is asked to fill up the for forms again.
+
+Test:
+User tries to book a room before current date (fail)
+Procedure:
+1. User clicks on a day in the past on the calendar
+2. User clicks on a available room and time slot
+Behaviour:
+An error message appears saying the date is not bookable.
+
+Test:
+User tries to view a booking (success)
+Procedure:
+1. User clicks on a day on the calendar
+2. User clicks on a booked item.
+Behaviour:
+All the information associated with the booking is shown.
+
+Test:
+Admin tries to mass book (fail)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Mass Booking'.
+3. Admin fills in the forms'
+4. Admin clicks 'Book'.
+Behaviour:
+if the mendatory fields are not filled Admin is redirected back to the Mass
+Booking page to try again.
+
+Test:
+Admin tries to mass book -- Override Option test (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Mass Booking'.
+3. Admin fills in the forms'
+4. Admin selects 'Override Option'.
+5. Admin clicks 'Book'.
+Behaviour:
+Succeeds with booking over the existing bookings in the database.
+
+Test:
+Admin tries to mass book -- Override Option test (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Mass Booking'.
+3. Admin fills in the forms'
+4. Admin does not select 'Override Option'.
+5. Admin clicks 'Book'.
+Behaviour:
+Succeeds without booking over the existing bookings in the database.
+
+Test:
+Admin tries to mass book -- repetiton test(success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Mass Booking'.
+3. Admin fills in the forms'.
+4. Admin chooses certain days of the week.
+5. Admin clicks 'Book'.
+Behaviour:
+Succeeds with booking with the selected days being booked repeatly in the database.
+
+Test:
+Admin tries to update booking settings -- Maximum Number of Bookings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Booking Settings'.
+3. Admin changes the Maximum Number of Bookings
+4. Admin clicks 'Update'
+Behaviour:
+After the validation of the input the database is updated with the new value.
+
+Test:
+Admin tries to update booking settings -- Future Bookings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Booking Settings'.
+3. Admin changes the Future Bookings
+4. Admin clicks 'Update'
+Behaviour:
+After the validation of the input the database is updated with the new value.
+
+Test:
+Admin tries to update rooms and time settings -- update Time Settings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Rooms and Time Settings'.
+3. Admin updates any of the fields
+4. Admin clicks 'Update'
+Behaviour:
+After the validation of the input the database is updated with the new value.
+
+Test:
+Admin tries to update rooms and time settings -- delete Time Settings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Rooms and Time Settings'.
+3. Admin clicks delete button next to the time setting
+Behaviour:
+The time slot gets deleted right away and database gets updated to exclude all
+bookings made for that deleted slot time.
+
+Test:
+Admin tries to update rooms and time settings -- add Time Settings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Rooms and Time Settings'.
+3. Admin fills in the time add field
+4. Admin clicks the 'Add'
+Behaviour:
+Page reloads with new time slots shown.
+
+Test:
+Admin tries to update rooms and time settings -- update Room Settings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Rooms and Time Settings'.
+3. Admin updates any of the fields
+4. Admin clicks 'Update'
+Behaviour:
+After the validation of the input the database is updated with the new value.
+
+Test:
+Admin tries to update rooms and time settings -- delete Room Settings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Rooms and Time Settings'.
+3. Admin clicks delete button next to the room setting
+Behaviour:
+The room gets deleted right away and database gets updated to exclude all
+bookings made for that deleted room.
+
+
+Test:
+Admin tries to update rooms and time settings -- add Room Settings (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Rooms and Time Settings'.
+3. Admin fills in the room add field
+4. Admin clicks the 'Add'
+Behaviour:
+Page reloads with new room slots shown.
+
+Test:
+Admin tries to add a user - User role (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Add Users'.
+3. Admin fills in the field with user role
+4. Admin clicks the 'Add'
+Behaviour:
+Page reloads with a success message.  Under list user in settings, new user
+shows up with user role.
+
+Test:
+Admin tries to add a user - Admin role (success)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Add Users'.
+3. Admin fills in the field with admin role.
+4. Admin clicks the 'Add'
+Behaviour:
+Page reloads with a success message.  Under list user in settings, new user
+shows up with admin role.
+
+Test:
+Admin tries to add a user -- general (fail)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Add Users'.
+3. Admin fills in the field
+4. Admin clicks the 'Add'
+Behaviour:
+Page reloads with error messages for incomplete forms.  Under list user in
+settings, new user is not added.
+
+Test:
+Admin tries to add a user -- password does not match (fail)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'Add Users'.
+3. Admin fills in the field with 2 different passwords
+4. Admin clicks the 'Add'
+Behaviour:
+Page reloads with error messages stating passwords don't match.  Under list user
+in settings, new user is not added.
+
+Test:
+Admin wants to list users
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'List Users'.
+Behaviour:
+List user shows all the current users in the database.
+
+Test:
+Admin wants to list users -- delete user
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'List Users'.
+3. Admin clicks red x.  Confirm.
+Behaviour:
+List user removes selected deleted user from database
+
+Test:
+Admin wants to list users -- delete user (self)
+Procedure:
+1. Admin clicks on 'Settings'.
+2. Admin clicks on 'List Users'.
+3. Admin clicks red x.  Confirm.
+Behaviour:
+List user removes from page.  When refresh re-show up.
+
+Test:
+User wants to change email
+Procedure:
+1. User clicks on 'Profile'.
+2. User changes email
+Behaviour:
+Email is changed
+
+Test:
+User wants to change password (success)
+Procedure:
+1. User clicks on 'Profile'.
+2. User changes password
+Behaviour:
+Password is changed
+
+Test:
+User wants to change password (fail)
+Procedure:
+1. User clicks on 'Profile'.
+2. User changes password, does not match
+Behaviour:
+Error message is showned
+
+Test:
+User wants to delete there booking (success)
+Procedure:
+1. User clicks on a booking that we booked.
+2. Click delete 
+Behaviour:
+Redirect back to calendar page with booking deleted
+
+Test:
+User wants to delete someones else booking (fail)
+Procedure:
+1. User clicks on a booking that we booked.
+Behaviour:
+No delete button is found, can't delete.
+
+Test:
+Admin wants to delete someones else booking (success)
+Procedure:
+1. Admin clicks on a booking that we booked.
+2. Click delete 
+Behaviour:
+Redirect back to calendar page with booking deleted
+
+Test:
+Labook image, redirect back to main page (success)
+Procedure:
+1. User clicks on the logo from any page.
+Behaviour:
+Redirect back to calendar page.
+
+Test:
+User Logins in and tries to access admin features
+Procedure:
+1. Users login
+2. Users tries to access admin features
+Behaviour:
+Redirect back to calendar page.
+
+
+
+
+
+
+
+
