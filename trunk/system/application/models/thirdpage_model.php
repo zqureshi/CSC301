@@ -70,7 +70,7 @@ class Thirdpage_model extends Model {
 				$maxNumberOfBookingsAllowed = $this->rooms_model->get_max_number_of_bookings();
 				
 				// Check if the user has reached the maximum number of bookings allowed.
-				if($maxNumberOfBookingsAllowed > $numberOfBookingsMade){
+				if(($maxNumberOfBookingsAllowed > $numberOfBookingsMade) || $this->booking_user->is_admin($currentUser)){
 					$currentDate = date("Y-M-d");
 					$givenDate = "$year-$month-$day";
 					
