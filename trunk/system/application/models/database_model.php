@@ -48,6 +48,7 @@ class Database_model extends Model {
     $limit = $this->input->post('limitDate');	
 	echo $limit ;
 	if($this->rooms_model->validate_date($limit) == 1){
+		echo "aaaaaaat" ;
 		 $this->value = xss_clean($limit);
    		 $this->db->where('name', 'limitDate');
    		 $this->db->update('variables', $this);
