@@ -64,5 +64,9 @@ class Massbook extends Controller {
 		}
 
 		redirect("/bookroom","location");
-	}			
+	}	
+
+	function test (){
+		echo strtotime("2010-12-35");
+	}		
 }
