@@ -71,13 +71,14 @@ class ThirdPage extends Controller {
 			$currentUser = $this->session->userdata('id') ;
 			if(($this->session->userdata('id') == $userId) || $this->booking_user->is_admin($currentUser)){
 				$temp = $this->rooms_model->delete_from_db($year,$month,$day,$room,$slot);
-				$data['year']= $year;
-				$data['month'] = $month ;  
-				$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
-				$this->load->view('bookroom',$data);
+				redirect("/bookroom/index/$year/$month","location");
+// 				$data['year']= $year;
+// 				$data['month'] = $month ;  
+// 				$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
+// 				$this->load->view('bookroom',$data);
 			}			
 		}else{
-			echo "Error" ;
+			redirect("/bookroom/index/$year/$month","location");
 		}
 	}
 }
