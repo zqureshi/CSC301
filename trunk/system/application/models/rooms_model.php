@@ -389,6 +389,7 @@ class Rooms_model extends Model {
 			$currentDateTS += (60 * 60 * 24) ;
 		}
 		return $dateMonthYearArr ;
+	
 	}
 	
 	/*
@@ -397,18 +398,22 @@ class Rooms_model extends Model {
 	 */
 	function validate_date($date){
 		$size = strlen($date) ;
-		if($size == 10){
-			$temp1 = substr($date, 0, 4);
-			$temp2 = substr($date, 5, 2);
-			$temp3 = substr($date, 8, 2);		
-			
-			if ($date[4] != "-" && $date[7] != "-" && is_numeric($temp1)&& is_numeric($temp2) && is_numeric($temp3)){
-				return 0 ;
-			}else{
-				return 1 ;
-			}
+		if(strtotime($date) == -1){
+			return 0 ;
 		}else{
-			return 0 ;	
+			if($size == 10){
+				$temp1 = substr($date, 0, 4);
+				$temp2 = substr($date, 5, 2);
+				$temp3 = substr($date, 8, 2);		
+				
+				if ($date[4] != "-" && $date[7] != "-" && is_numeric($temp1)&& is_numeric($temp2) && is_numeric($temp3)){
+					return 0 ;
+				}else{
+					return 1 ;
+				}
+			}else{
+				return 0 ;	
+			}
 		}
 		
 	}
