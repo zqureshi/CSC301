@@ -396,7 +396,7 @@ class Rooms_model extends Model {
 	 * Right form : YYYY-MM-DD .
 	 */
 	function validate_date($date){
-		$size = strlrn($date) ;
+		$size = strlen($date) ;
 		if($size == 10){
 			$temp1 = substr($date, 0, 4);
 			$temp2 = substr($date, 5, 2);
