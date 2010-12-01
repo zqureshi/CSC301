@@ -5,6 +5,7 @@ class Database_model extends Model {
   function Database_model()
   {
     parent::Model();
+    $this->load->model('rooms_model' );	
   }
 
   function get_room_time($var)
@@ -44,9 +45,15 @@ class Database_model extends Model {
     $this->db->where('name', 'maxBookings');
     $this->db->update('variables', $this);
 
-    $this->value = xss_clean($this->input->post('limitDate'));
-    $this->db->where('name', 'limitDate');
-    $this->db->update('variables', $this);
+    $limit = $this->input->post('limitDate');
+	if($this->rooms_model->validate_date($limit){
+		 $this->value = xss_clean($limit);
+   		 $this->db->where('name', 'limitDate');
+   		 $this->db->update('variables', $this);
+	}else{
+		redirect("/users","location");
+	}
+    
   }
 
   function del_room_time($id, $item, $whatid)
