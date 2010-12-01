@@ -56,7 +56,7 @@ class Recovery extends Controller {
     echo "Recovery Email Sent";
 
     $this->email->from(
-      $this->config->load('recovery_email'), 'Password Recovery');
+      $this->config->item('recovery_email'), 'Password Recovery');
 
     $this->email->to($user->email);
     $this->email->subject('LabBooking Password Recovery');
