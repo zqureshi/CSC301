@@ -67,6 +67,6 @@ class Massbook extends Controller {
 	}	
 
 	function test (){
-		echo strtotime("2010-12-30");
+		echo "aaaaaaa" ;//strtotime("2010-12-30");
 	}		
 }
