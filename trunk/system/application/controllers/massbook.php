@@ -17,6 +17,7 @@ class Massbook extends Controller {
 		$this->authentication->validate_admin();
 
 		$this->load->model('massbook_model' );	
+		$this->load->model('rooms_model' );	
 		$this->load->helper('url');
 
 	        $this->load->model('side_model');
@@ -48,8 +49,8 @@ class Massbook extends Controller {
 		
 		// Check if there is a empty field. If yes redirect the user back to forms.
 		if (isset($slotname) && isset($roomname) && isset($days) && isset($course) && isset($end_date) && isset($start_date)) {
-			if($this->massbook_model->validate_date($start_date) && $this->massbook_model->validate_date($end_date)){
-				$this->massbook_model->massbook($start_date,$end_date,$course,$notes,$days,$roomname,$slotname,$override,$user);
+			if($this->rooms_model->validate_date($start_date) && $this->rooms_model->validate_date($end_date)){
+				$this->rooms_model->massbook($start_date,$end_date,$course,$notes,$days,$roomname,$slotname,$override,$user);
 			}else{
 				// errNo 2 means there are errors in the date format.
 				$errNo = 2 ;
