@@ -45,13 +45,14 @@ class Database_model extends Model {
     $this->db->where('name', 'maxBookings');
     $this->db->update('variables', $this);
 
-    $limit = $this->input->post('limitDate');
+    $limit = $this->input->post('limitDate');	
+	echo $limit ;
 	if($this->rooms_model->validate_date($limit)){
 		 $this->value = xss_clean($limit);
    		 $this->db->where('name', 'limitDate');
    		 $this->db->update('variables', $this);
 	}else{
-		redirect("/users","location");
+		//redirect("/users","location");
 	}
     
   }
