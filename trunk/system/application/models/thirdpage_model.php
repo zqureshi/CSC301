@@ -16,7 +16,8 @@ class Thirdpage_model extends Model {
 	 * the given slot is not booked.
 	 */
 	function generate_content ($year,$month,$day,$room,$slot){
-		
+			// Gets the id of the current user.
+			$currentUser = $this->session->userdata('id') ;
 			$temp1 = $this->rooms_model->get_room_name($room) ;
 			$temp2 = $this->rooms_model->get_slot_name($slot);
 				
@@ -65,7 +66,7 @@ class Thirdpage_model extends Model {
 				$this->data .= "</table>"."\n";
 				
 			}else{
-				$currentUser = $this->session->userdata('id') ;
+
 				$numberOfBookingsMade = $this->rooms_model->get_number_of_bookings_by_id($currentUser) ;
 				$maxNumberOfBookingsAllowed = $this->rooms_model->get_max_number_of_bookings();
 				
