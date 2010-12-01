@@ -63,7 +63,6 @@ class Massbook extends Controller {
 			redirect("/massbook/index/$errNo","location");
 		}
 
-		$data['content'] = $days ;
-		$this->load->view('massbook',$data);
+		redirect("/bookroom","location");
 	}			
 }
