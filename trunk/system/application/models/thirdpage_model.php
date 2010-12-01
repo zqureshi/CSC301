@@ -54,7 +54,7 @@ class Thirdpage_model extends Model {
 				
 				// Do not show the delete option if the booking doesnt belong to the 
 				// loged user or not and admin. 
-				if ($this->session->userdata('id') == $temp3a){
+				if (($this->session->userdata('id') == $temp3a) || $this->booking_user->is_admin($currentUser) ){
 					$this->data .= "	<tr>"."\n";
 					$this->data .= "        <form name=\"input\" action=\"/thirdPage/delete/$year/$month/$day/$room/$slot\" method=\"POST\">" ."\n";					
 					$this->data .= "		<td colspan=\"2\"  align=\"center\"><input type=\"submit\" value=\"Delete booking\" /></td>"."\n";	
