@@ -398,7 +398,7 @@ class Rooms_model extends Model {
 	 */
 	function validate_date($date){
 		$size = strlen($date) ;
-		if(strtotime($date) == -1){
+		if(($time = strtotime($date) == -1) && $time === false ){
 			return 0 ;
 		}else{
 			if($size == 10){
