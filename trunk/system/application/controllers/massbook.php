@@ -50,6 +50,8 @@ class Massbook extends Controller {
 		// Check if there is a empty field. If yes redirect the user back to forms.
 		if (isset($slotname) && isset($roomname) && isset($days) && isset($course) && isset($end_date) && isset($start_date)) {
 			if($this->rooms_model->validate_date($start_date) && $this->rooms_model->validate_date($end_date)){
+				echo $this->rooms_model->validate_date($start_date) ;
+				echo $this->rooms_model->validate_date($end_date);
 				echo "AAAAAAAAAAAAAAAAAAAAAAAAA" ;
 				$this->rooms_model->massbook($start_date,$end_date,$course,$notes,$days,$roomname,$slotname,$override,$user);
 			}else{
@@ -64,7 +66,7 @@ class Massbook extends Controller {
 			redirect("/massbook/index/$errNo","location");
 		}
 		echo "BBBBBBBBBBBBBBBBBB" ;
-		redirect("/bookroom","location");
+		//redirect("/bookroom","location");
 	}	
 
 	function test (){
