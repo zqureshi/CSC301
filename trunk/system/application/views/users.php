@@ -14,7 +14,7 @@
 
       <div class="span-20 prepend-4 last">
         <table border="0">
-          <tr>
+          <tr class="menu">
             <td>
               <div class="span-8 info">
                 <h3 style="text-align: center">
@@ -23,7 +23,7 @@
               </div>
             </td>
           </tr>
-          <tr>
+          <tr class="menu">
             <td>
               <div class="span-8 info last">
                 <h3 style="text-align: center">
@@ -32,7 +32,7 @@
               </div>
             </td>
           </tr>
-          <tr>
+          <tr class="menu">
             <td>
               <div class="span-8 info last">
                 <h3 style="text-align: center">
@@ -41,7 +41,7 @@
               </div>
             </td>
           </tr>
-          <tr>
+          <tr class="menu">
             <td>
               <div class="span-8 info last">
                 <h3 style="text-align: center">
@@ -50,7 +50,7 @@
               </div>
             </td>
 	  </tr>
-          <tr>
+          <tr class="menu">
             <td>
               <div class="span-8 info last">
                 <h3 style="text-align: center">
