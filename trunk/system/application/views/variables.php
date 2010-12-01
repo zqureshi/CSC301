@@ -27,7 +27,7 @@
             <td><?= form_input('maxBookings', $query->row()->value) ?></td>
           </tr>
           <tr>
-            <td>Future Bookings (Year-Month-Day)</td>
+            <td>Future Bookings (2010-01-31)</td>
             <td><?= form_input('limitDate', $query->next_row()->value) ?></td>
           </tr>
         </table>
