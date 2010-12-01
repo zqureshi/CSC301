@@ -68,7 +68,8 @@ class ThirdPage extends Controller {
 	function delete($year=null, $month=null,$day=null, $room=null, $slot=null){
 		if(!($year==null || $month==null || $day==null || $room==null || $slot==null)){
 			$userId = $this->rooms_model->get_user_id($year,$month,$day,$room, $slot);
-			if($this->session->userdata('id') == $userId){
+			$currentUser = $this->session->userdata('id') ;
+			if(($this->session->userdata('id') == $userId) || $this->booking_user->is_admin($currentUser)){
 				$temp = $this->rooms_model->delete_from_db($year,$month,$day,$room,$slot);
 				$data['year']= $year;
 				$data['month'] = $month ;  
