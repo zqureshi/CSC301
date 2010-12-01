@@ -55,7 +55,9 @@ class Recovery extends Controller {
     $hash = $this->Recovery_hash->add_hash($user->id);
     echo "Recovery Email Sent";
 
-    $this->email->from('noreply@aafjj9f2.yahoo.joyent.us', 'Password Recovery');
+    $this->email->from(
+      $this->config->load('recovery_email'), 'Password Recovery');
+
     $this->email->to($user->email);
     $this->email->subject('LabBooking Password Recovery');
     $this->email->message('Open link to reset password: '.site_url("recovery/start_password_reset/{$hash}"));

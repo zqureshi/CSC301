@@ -12,6 +12,7 @@
 |
 */
 $config['base_url']	= "http://aafjj9f2.yahoo.joyent.us/";
+$config['recovery_email'] = "noreply@aafjj9f2.yahoo.joyent.us";
 
 /*
 |--------------------------------------------------------------------------
