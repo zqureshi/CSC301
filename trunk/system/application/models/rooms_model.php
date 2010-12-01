@@ -249,14 +249,18 @@ class Rooms_model extends Model {
 		$numOfSlots = $this->get_number_of_slots();
 		$numOfRooms = $this->get_number_of_rooms();
 		
-		$this->data .= "<table border='0' cellpadding='0' cellspacing='0' align=center>"."\n";
-		$this->data .= "	<tr>"."\n";
-		$this->data .= "		<td align=center>$year-$month-$day</td>"."\n";
-		$this->data .= "	</tr>"."\n";
-		$this->data .= "	<tr>"."\n";
-		$this->data .= "		<td><a href='/bookroom/index/$year/$month/'>Back to Calendar</a></td>"."\n";
-		$this->data .= "	</tr>"."\n";
-		$this->data .= "</table>"."\n";
+
+		$this->data .= "<center>$year-$month-$day</center>"."\n";
+		$this->data .= "<center><a href='/bookroom/index/$year/$month/'>Back to Calendar</a></center>"."\n";
+
+// 		$this->data .= "<table border='0' cellpadding='0' cellspacing='0' align=center>"."\n";
+// 		$this->data .= "	<tr>"."\n";
+// 		$this->data .= "		<td align=center>$year-$month-$day</td>"."\n";
+// 		$this->data .= "	</tr>"."\n";
+// 		$this->data .= "	<tr>"."\n";
+// 		$this->data .= "		<td><a href='/bookroom/index/$year/$month/'>Back to Calendar</a></td>"."\n";
+// 		$this->data .= "	</tr>"."\n";
+// 		$this->data .= "</table>"."\n";
 		
 		$this->data .= "<table border='0' cellpadding='0' cellspacing='0' class='calendar'>";
 		for ($i = 0 ; $i < $numOfSlots + 1; $i++) {
