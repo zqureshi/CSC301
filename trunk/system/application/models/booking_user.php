@@ -77,6 +77,9 @@ class Booking_user extends Model {
   {
     $this->db->where('id', $id);
     $this->db->delete('Users');
+
+    $this->db->where('id', $id);
+    $this->db->delete('booking');
   }
 }
 
