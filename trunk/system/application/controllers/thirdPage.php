@@ -25,11 +25,6 @@ class ThirdPage extends Controller {
 	
 		if(($year == null) || ($month == null)|| ($day == null)|| ($room == null)|| ($slot == null)){
 			redirect("/bookroom","location");		
-//			$data['year']= date("Y");
-//			$data['month'] = date("m");
-//			$data['day'] = date("d"); 
-//			$data['content'] = $this->thirdpage_model->generate_content($year,$month,$day,$room,$slot);
-//			$this->load->view('thirdPage',$data);
 		}else{
 			$data['year']= $year;
 			$data['month'] = $month ;
@@ -56,11 +51,6 @@ class ThirdPage extends Controller {
 		}else{
 			redirect("/thirdPage/index/$year/$month/$day/$room/$slot","location");
 		}
-		
-//		$data['year']= $year;
-//		$data['month'] = $month ;  
-//		$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
-//		$this->load->view('bookroom',$data);
 		redirect("/bookroom/index/$year/$month","location");
 	
 	}
@@ -72,10 +62,6 @@ class ThirdPage extends Controller {
 			if(($this->session->userdata('id') == $userId) || $this->booking_user->is_admin($currentUser)){
 				$temp = $this->rooms_model->delete_from_db($year,$month,$day,$room,$slot);
 				redirect("/bookroom/index/$year/$month","location");
-// 				$data['year']= $year;
-// 				$data['month'] = $month ;  
-// 				$data['calendar'] = $this->bookroom_model->generate_calendar($data['year'],$data['month']);
-// 				$this->load->view('bookroom',$data);
 			}			
 		}else{
 			redirect("/bookroom/index/$year/$month","location");
